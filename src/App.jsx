@@ -1,9 +1,10 @@
 import React from "react";
+import { Authentication } from "./views/Authentication";
 
 const App = () => {
   return (
     <div>
-      <h1> UniSpace</h1>
+     <Authentication/>
     </div>
   );
 };
