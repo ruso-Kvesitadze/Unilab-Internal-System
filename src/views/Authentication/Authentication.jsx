@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { Input } from "../../components/Input";
+import { PasswordInput } from "../../components/PasswordInput";
 
 export const Authentication = () => {
   const [email, setEmail] = useState("");
@@ -20,6 +21,7 @@ export const Authentication = () => {
             setEmail(e.target.value);
           }}
         />
+        <PasswordInput label="პაროლი" placeholder="***************" />
       </form>
     </div>
   );
