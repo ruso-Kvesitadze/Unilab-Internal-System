@@ -8,8 +8,4 @@ export const SButton = styled(motion.button)`
   width: fit-content;
   height: fit-content;
   cursor: pointer;
-
-  &:hover g {
-    stroke: #000;
-  }
 `;
