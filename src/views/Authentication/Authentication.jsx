@@ -4,6 +4,7 @@ import { PasswordInput } from "../../components/PasswordInput";
 
 export const Authentication = () => {
   const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
 
   return (
     <div>
@@ -21,7 +22,16 @@ export const Authentication = () => {
             setEmail(e.target.value);
           }}
         />
-        <PasswordInput label="პაროლი" placeholder="***************" />
+        <PasswordInput
+          id="email"
+          name="email"
+          label="პაროლი"
+          placeholder="***************"
+          value={password}
+          onChange={(e) => {
+            setPassword(e.target.value);
+          }}
+        />
       </form>
     </div>
   );

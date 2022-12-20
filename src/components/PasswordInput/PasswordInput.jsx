@@ -1,5 +1,11 @@
-import React from "react";
-import { SPasswordInput } from "./PasswordInput.styled";
+import React, { useState } from "react";
+import {
+  SContainer,
+  SLabel,
+  SInput,
+  SInputWrapper,
+} from "./PasswordInput.styled";
+import { Eye } from "../Eye";
 
 export const PasswordInput = ({
   id,
@@ -9,14 +15,29 @@ export const PasswordInput = ({
   value,
   onChange,
 }) => {
+  const [isPasswordVisible, setIsPasswordVisible] = useState(true);
+
+  const handleVisibilityToggle = () => {
+    setIsPasswordVisible(!isPasswordVisible);
+  };
+
   return (
-    <SPasswordInput
-      id={id}
-      label={label}
-      name={name}
-      placeholder={placeholder}
-      value={value}
-      onChange={onChange}
-    />
+    <SContainer>
+      <SLabel htmlFor={id}>{label}</SLabel>
+      <SInputWrapper>
+        <SInput
+          id={id}
+          type={isPasswordVisible ? "password" : "text"}
+          name={name}
+          placeholder={placeholder}
+          value={value}
+          onChange={onChange}
+        />
+        <Eye
+          isPasswordVisible={isPasswordVisible}
+          onClick={handleVisibilityToggle}
+        />
+      </SInputWrapper>
+    </SContainer>
   );
 };

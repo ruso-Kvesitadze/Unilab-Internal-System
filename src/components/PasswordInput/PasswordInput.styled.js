@@ -1,40 +1,37 @@
-import { PasswordInput } from "@mantine/core";
 import styled from "styled-components";
 
-export const SPasswordInput = styled(PasswordInput)`
-  & {
-    display: flex;
-    flex-direction: column;
-    width: 21.25rem;
-    gap: 0.5rem;
-  }
+export const SContainer = styled.div`
+  display: flex;
+  flex-direction: column;
+  width: 21.25rem;
+  gap: 0.5rem;
+`;
 
-  & .mantine-PasswordInput-label {
-    font-size: 0.75rem;
-    color: #ffffff;
-  }
+export const SLabel = styled.label`
+  font-size: 0.75rem;
+  color: #ffffff;
+`;
 
-  & .mantine-PasswordInput-visibilityToggle {
-    border-radius: 0.4rem;
-  }
+export const SInput = styled.input`
+  width: 100%;
+  font-size: 0.875rem;
+  color: #353535;
+  background-color: transparent;
+  border: none;
+  outline: none;
+`;
 
-  & .mantine-PasswordInput-input {
-    background-color: #f1f1f1;
-    border-radius: 0.625rem;
-    border: none;
-    height: 2.5rem;
-  }
+export const SInputWrapper = styled.div`
+  display: flex;
+  width: 100%;
+  border-radius: 0.625rem;
+  background-color: #f1f1f1;
+  padding: 0.75rem 1.2rem;
+  overflow: hidden;
+  gap: 1.2rem;
 
-  &:focus .mantine-PasswordInput-input {
+  &:focus-within {
     background-color: #ffffff;
     box-shadow: inset 0 0 0 2px #2984ce;
-  }
-
-  & .mantine-PasswordInput-innerInput {
-    padding-left: 1.188rem;
-    font-size: .875rem;
-    color: #353535;
-    top: 50%;
-    transform: translateY(-50%);
   }
 `;
