@@ -32,6 +32,7 @@ export const Authentication = () => {
             type="text"
             name="email"
             label="ელ-ფოსტა"
+            width="21.25rem"
             placeholder="info@unilab.ge"
             value={email}
             onChange={(e) => {
@@ -42,6 +43,7 @@ export const Authentication = () => {
             id="password"
             name="password"
             label="პაროლი"
+            width={"21.25rem"}
             placeholder="***************"
             value={password}
             onChange={(e) => {
@@ -62,7 +64,7 @@ export const Authentication = () => {
           <SForgotPasswordLink href="#">დაგავიწყდა პაროლი?</SForgotPasswordLink>
         </SRememberWrapper>
 
-        <Button>ავტორიზაცია</Button>
+        <Button width="21.25rem">ავტორიზაცია</Button>
         <SRegistrationText>
           არ გაქვს ანგარიში?{" "}
           <SRegistrationLink href="#">დარეგისტრირდი</SRegistrationLink>

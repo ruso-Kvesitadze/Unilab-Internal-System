@@ -3,7 +3,7 @@ import styled from "styled-components";
 export const SContainer = styled.div`
   display: flex;
   flex-direction: column;
-  width: 21.25rem;
+  width: ${({ width }) => (width ? width : "100%")};
   gap: 0.5rem;
 `;
 
@@ -30,7 +30,8 @@ export const SInputWrapper = styled.div`
 
 export const SInput = styled.input`
   width: 100%;
-  font-size: 0.875rem;
+  font-size: ${({ fontSize }) => (fontSize ? fontSize : "0.875rem")};
+  font-weight: ${({ fontWeight }) => (fontWeight ? fontWeight : "400")};
   padding: 0.75rem 0;
   color: #353535;
   background-color: transparent;

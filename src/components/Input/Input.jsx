@@ -7,13 +7,16 @@ export const Input = ({
   label,
   name,
   placeholder,
+  width,
+  fontSize,
+  fontWeight,
   value,
+  onChange,
   LeftComponent,
   RightComponent,
-  onChange,
 }) => {
   return (
-    <SContainer>
+    <SContainer width={width}>
       <SLabel htmlFor={id}>{label}</SLabel>
       <SInputWrapper>
         {LeftComponent}
@@ -22,6 +25,9 @@ export const Input = ({
           type={type}
           name={name}
           placeholder={placeholder}
+          width={width}
+          fontSize={fontSize}
+          fontWeight={fontWeight}
           value={value}
           onChange={onChange}
         />
