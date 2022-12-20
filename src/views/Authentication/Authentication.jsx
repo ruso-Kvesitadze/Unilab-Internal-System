@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { Input } from "../../components/Input";
 import { PasswordInput } from "../../components/PasswordInput";
+import { Eye } from "../../components/Eye";
 
 export const Authentication = () => {
   const [email, setEmail] = useState("");
@@ -23,8 +24,8 @@ export const Authentication = () => {
           }}
         />
         <PasswordInput
-          id="email"
-          name="email"
+          id="password"
+          name="password"
           label="პაროლი"
           placeholder="***************"
           value={password}

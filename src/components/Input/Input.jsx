@@ -1,5 +1,5 @@
-import React, { useState } from "react";
-import { SContainer, SInput, SLabel } from "./Input.styled";
+import React from "react";
+import { SContainer, SLabel, SInputWrapper, SInput } from "./Input.styled";
 
 export const Input = ({
   id,
@@ -8,19 +8,25 @@ export const Input = ({
   name,
   placeholder,
   value,
+  LeftComponent,
+  RightComponent,
   onChange,
 }) => {
   return (
     <SContainer>
       <SLabel htmlFor={id}>{label}</SLabel>
-      <SInput
-        id={id}
-        type={type}
-        name={name}
-        placeholder={placeholder}
-        value={value}
-        onChange={onChange}
-      />
+      <SInputWrapper>
+        {LeftComponent}
+        <SInput
+          id={id}
+          type={type}
+          name={name}
+          placeholder={placeholder}
+          value={value}
+          onChange={onChange}
+        />
+        {RightComponent}
+      </SInputWrapper>
     </SContainer>
   );
 };
