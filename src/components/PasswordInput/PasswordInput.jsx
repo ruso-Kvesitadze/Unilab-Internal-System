@@ -10,7 +10,7 @@ export const PasswordInput = ({
   value,
   onChange,
 }) => {
-  const [isPasswordVisible, setIsPasswordVisible] = useState(true);
+  const [isPasswordVisible, setIsPasswordVisible] = useState(false);
 
   const handleVisibilityToggle = () => {
     setIsPasswordVisible(!isPasswordVisible);

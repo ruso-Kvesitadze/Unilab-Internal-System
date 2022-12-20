@@ -1,9 +1,16 @@
 import React from "react";
 import { SButton } from "./Eye.styled";
+import { motion } from "framer-motion";
+import { pathVariants } from "./Eye.variants";
 
 export const Eye = ({ isPasswordVisible, onClick }) => {
   return (
-    <SButton type="button" onClick={onClick}>
+    <SButton
+      type="button"
+      onClick={onClick}
+      initial={"hidden"}
+      animate={isPasswordVisible ? "visible" : "hidden"}
+    >
       <svg
         xmlns="http://www.w3.org/2000/svg"
         width={24}
@@ -19,14 +26,18 @@ export const Eye = ({ isPasswordVisible, onClick }) => {
         <mask id="myMask">
           <rect x="0" y="0" width="24" height="24" fill="white" stroke="none" />
 
-          {isPasswordVisible && <path d="M 0 0 L 24 24" stroke="black" />}
+          <motion.path
+            d="M 0 0 L 24 24"
+            stroke="black"
+            variants={pathVariants}
+          />
         </mask>
         <path
           d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"
           mask="url(#myMask)"
         />
         <circle cx={12} cy={12} r={3} mask="url(#myMask)" />
-        {isPasswordVisible && <path d="M 2 4 L 20 22" stroke="black" />}
+        <motion.path d="M 2 4 L 20 22" stroke="black" variants={pathVariants} />
       </svg>
     </SButton>
   );

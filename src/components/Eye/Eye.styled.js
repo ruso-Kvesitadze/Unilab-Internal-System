@@ -1,6 +1,7 @@
 import styled from "styled-components";
+import { motion } from "framer-motion";
 
-export const SButton = styled.button`
+export const SButton = styled(motion.button)`
   background-color: transparent;
   display: flex;
   border: none;
