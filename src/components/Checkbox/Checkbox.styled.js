@@ -30,6 +30,7 @@ export const SCheckWrapper = styled.div`
 `;
 
 export const SLabel = styled.label`
+  font-size: 0.6875rem;
   width: fit-content;
   color: #ebebeb;
   cursor: pointer;

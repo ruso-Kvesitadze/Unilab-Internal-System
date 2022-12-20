@@ -13,11 +13,11 @@ export const Eye = ({ isPasswordVisible, onClick }) => {
     >
       <svg
         xmlns="http://www.w3.org/2000/svg"
-        width={24}
-        height={24}
+        width={22}
+        height={22}
         viewBox="0 0 24 24"
         fill="none"
-        stroke="currentColor"
+        stroke="#242424"
         strokeWidth={2}
         strokeLinecap="round"
         strokeLinejoin="round"
@@ -37,7 +37,7 @@ export const Eye = ({ isPasswordVisible, onClick }) => {
           mask="url(#myMask)"
         />
         <circle cx={12} cy={12} r={3} mask="url(#myMask)" />
-        <motion.path d="M 2 4 L 20 22" stroke="black" variants={pathVariants} />
+        <motion.path d="M 2 4 L 20 22" stroke="#242424" variants={pathVariants} />
       </svg>
     </SButton>
   );

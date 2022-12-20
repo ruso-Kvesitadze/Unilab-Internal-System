@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import { Input } from "../../components/Input";
 import { PasswordInput } from "../../components/PasswordInput";
 import { Checkbox } from "../../components/Checkbox/Checkbox";
+import { Button } from "../../components/Button";
 
 export const Authentication = () => {
   const [email, setEmail] = useState("");
@@ -34,6 +35,7 @@ export const Authentication = () => {
             setPassword(e.target.value);
           }}
         />
+        
         <Checkbox
           id="remember"
           name="remember"
@@ -43,6 +45,11 @@ export const Authentication = () => {
             setShouldRemember(!shouldRemember);
           }}
         />
+        <a href="#">დაგავიწყდა პაროლი?</a>
+        <Button>ავტორიზაცია</Button>
+        <p>
+          არ გაქვს ანგარიში? <a href="#">დარეგისტრირდი</a>
+        </p>
       </form>
     </div>
   );

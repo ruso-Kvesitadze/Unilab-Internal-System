@@ -14,10 +14,11 @@ export const SLabel = styled.label`
 
 export const SInputWrapper = styled.div`
   display: flex;
+  align-items: center;
   width: 100%;
   border-radius: 0.625rem;
   background-color: #f1f1f1;
-  padding: 0.75rem 1.2rem;
+  padding: 0 1.2rem;
   overflow: hidden;
   gap: 1.2rem;
 
@@ -30,6 +31,7 @@ export const SInputWrapper = styled.div`
 export const SInput = styled.input`
   width: 100%;
   font-size: 0.875rem;
+  padding: 0.75rem 0;
   color: #353535;
   background-color: transparent;
   border: none;
