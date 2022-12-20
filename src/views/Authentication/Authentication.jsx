@@ -1,11 +1,12 @@
 import React, { useState } from "react";
 import { Input } from "../../components/Input";
 import { PasswordInput } from "../../components/PasswordInput";
-import { Eye } from "../../components/Eye";
+import { Checkbox } from "../../components/Checkbox/Checkbox";
 
 export const Authentication = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
+  const [shouldRemember, setShouldRemember] = useState(false);
 
   return (
     <div>
@@ -31,6 +32,15 @@ export const Authentication = () => {
           value={password}
           onChange={(e) => {
             setPassword(e.target.value);
+          }}
+        />
+        <Checkbox
+          id="remember"
+          name="remember"
+          label="დამიმახსოვრე"
+          isChecked={shouldRemember}
+          onChange={() => {
+            setShouldRemember(!shouldRemember);
           }}
         />
       </form>
