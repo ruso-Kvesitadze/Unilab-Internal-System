@@ -1,10 +1,20 @@
 import styled from "styled-components";
 
+export const SAuthenticationView = styled.div`
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  width: 100%;
+  position: relative;
+  color: white;
+`;
+
 export const SForm = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
   max-width: 41.25rem;
+  margin-top: 70px;
 `;
 
 export const STitle = styled.h3`
@@ -49,6 +59,29 @@ export const SRegistrationText = styled.p`
 `;
 
 export const SRegistrationLink = styled.a`
+  margin-left: 5px;
   font-weight: 700;
   color: #ebebeb;
+`;
+
+export const SAuthenticationSvgs = styled.div`
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  z-index: -1;
+`;
+
+export const SVectorSvg = styled.img`
+  position: absolute;
+  left: 0rem;
+`;
+export const StarTopSvg = styled.img`
+  position: absolute;
+  right: 0rem;
+  top: 7.813rem;
+`;
+export const StarBottomSvg = styled.img`
+  position: absolute;
+  left: 12.875rem;
+  bottom: 0rem;
 `;
