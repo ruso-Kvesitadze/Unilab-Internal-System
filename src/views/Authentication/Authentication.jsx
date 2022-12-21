@@ -5,6 +5,7 @@ import { PasswordInput } from "../../components/PasswordInput";
 import { Checkbox } from "../../components/Checkbox/Checkbox";
 import { Button } from "../../components/Button";
 import {
+  SAuthenticationView,
   SDescription,
   SForgotPasswordLink,
   SForm,
@@ -13,6 +14,10 @@ import {
   SRegistrationText,
   SRememberWrapper,
   STitle,
+  SAuthenticationSvgs,
+  SVectorSvg,
+  StarTopSvg,
+  StarBottomSvg,
 } from "./Authentication.styled";
 
 export const Authentication = () => {
@@ -21,8 +26,9 @@ export const Authentication = () => {
   const [shouldRemember, setShouldRemember] = useState(false);
 
   return (
-    <div>
+    <SAuthenticationView>
       <Header />
+      <div></div>
       <SForm>
         <STitle>გამარჯობა 👋</STitle>
         <SDescription>
@@ -72,6 +78,11 @@ export const Authentication = () => {
           <SRegistrationLink href="#">დარეგისტრირდი</SRegistrationLink>
         </SRegistrationText>
       </SForm>
-    </div>
+      <SAuthenticationSvgs>
+        <SVectorSvg src="./public/assets/svg/vector.svg" alt="vector" />
+        <StarTopSvg src="./public/assets/svg/starTop.svg" alt="starTop" />
+        <StarBottomSvg src="./public/assets/svg/starBottom.svg" alt="starTop" />
+      </SAuthenticationSvgs>
+    </SAuthenticationView>
   );
 };
