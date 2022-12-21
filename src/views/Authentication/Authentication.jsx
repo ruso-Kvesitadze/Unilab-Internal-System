@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { Header } from "../../components/Header";
 import { Input } from "../../components/Input";
 import { PasswordInput } from "../../components/PasswordInput";
 import { Checkbox } from "../../components/Checkbox/Checkbox";
@@ -21,6 +22,7 @@ export const Authentication = () => {
 
   return (
     <div>
+      <Header />
       <SForm>
         <STitle>გამარჯობა 👋</STitle>
         <SDescription>
@@ -66,7 +68,7 @@ export const Authentication = () => {
 
         <Button width="21.25rem">ავტორიზაცია</Button>
         <SRegistrationText>
-          არ გაქვს ანგარიში?{" "}
+          არ გაქვს ანგარიში?
           <SRegistrationLink href="#">დარეგისტრირდი</SRegistrationLink>
         </SRegistrationText>
       </SForm>
