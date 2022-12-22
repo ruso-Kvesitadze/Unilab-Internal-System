@@ -76,7 +76,7 @@ export const Authentication = () => {
         <Button width="21.25rem">ავტორიზაცია</Button>
         <SRegistrationText>
           არ გაქვს ანგარიში?
-          <SRegistrationLink to={"/registration"}>
+          <SRegistrationLink to={"/privacy-policy"}>
             დარეგისტრირდი
           </SRegistrationLink>
         </SRegistrationText>
