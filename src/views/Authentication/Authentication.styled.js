@@ -60,7 +60,7 @@ export const SRegistrationText = styled.p`
   margin-top: 1.75rem;
 `;
 
-export const SRegistrationLink = styled.a`
+export const SRegistrationLink = styled(Link)`
   margin-left: 0.313rem;
   font-weight: 700;
   color: #ebebeb;
