@@ -1,10 +1,12 @@
 import styled from "styled-components";
+import { Link } from "react-router-dom";
 
 export const SAuthenticationView = styled.div`
   display: flex;
   align-items: center;
   flex-direction: column;
   width: 100%;
+  height: 100vh;
   position: relative;
   color: white;
 `;
@@ -14,7 +16,7 @@ export const SForm = styled.div`
   flex-direction: column;
   align-items: center;
   max-width: 41.25rem;
-  margin-top: 70px;
+  margin-top: 4.375rem;
 `;
 
 export const STitle = styled.h3`
@@ -45,7 +47,7 @@ export const SRememberWrapper = styled.div`
   margin-bottom: 3rem;
 `;
 
-export const SForgotPasswordLink = styled.a`
+export const SForgotPasswordLink = styled(Link)`
   display: block;
   font-size: 0.6875rem;
   width: fit-content;
@@ -58,8 +60,8 @@ export const SRegistrationText = styled.p`
   margin-top: 1.75rem;
 `;
 
-export const SRegistrationLink = styled.a`
-  margin-left: 5px;
+export const SRegistrationLink = styled(Link)`
+  margin-left: 0.313rem;
   font-weight: 700;
   color: #ebebeb;
 `;
@@ -77,7 +79,7 @@ export const SVectorSvg = styled.img`
 `;
 export const StarTopSvg = styled.img`
   position: absolute;
-  right: 0rem;
+  right: 4.438rem;
   top: 7.813rem;
 `;
 export const StarBottomSvg = styled.img`
