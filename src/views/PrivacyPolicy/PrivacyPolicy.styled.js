@@ -45,11 +45,12 @@ export const SButton = styled(Link)`
   font-size: 0.875rem;
   font-weight: 400;
   padding: 0.75rem;
-  border: none;
   border-radius: 0.625rem;
   background-color: #4980c0;
   color: #ffffff;
-  cursor: pointer;
   text-decoration: none;
   text-align: center;
+  &:hover {
+    background-color: #315c8e;
+  }
 `;
