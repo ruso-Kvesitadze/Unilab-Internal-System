@@ -28,7 +28,6 @@ export const Authentication = () => {
   return (
     <SAuthenticationView>
       <Header />
-      <div></div>
       <SForm>
         <STitle>გამარჯობა 👋</STitle>
         <SDescription>
@@ -37,7 +36,7 @@ export const Authentication = () => {
         <SInputWrapper>
           <Input
             id="email"
-            type="text"
+            type="email"
             name="email"
             label="ელ-ფოსტა"
             width="21.25rem"
@@ -69,7 +68,9 @@ export const Authentication = () => {
               setShouldRemember(!shouldRemember);
             }}
           />
-          <SForgotPasswordLink href="#">დაგავიწყდა პაროლი?</SForgotPasswordLink>
+          <SForgotPasswordLink to={"/recovery-password"}>
+            დაგავიწყდა პაროლი?
+          </SForgotPasswordLink>
         </SRememberWrapper>
 
         <Button width="21.25rem">ავტორიზაცია</Button>
