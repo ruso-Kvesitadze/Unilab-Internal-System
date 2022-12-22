@@ -10,4 +10,7 @@ export const SButton = styled.button`
   background-color: ${({ secondary }) => (secondary ? "#ffffff" : "#4980c0")};
   color: ${({ secondary }) => (secondary ? "#000000" : "#ffffff")};
   cursor: pointer;
+  &:hover {
+    background-color: #315c8e;
+  }
 `;
