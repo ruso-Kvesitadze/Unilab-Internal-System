@@ -42,7 +42,7 @@ export const Registration = () => {
           ამერიკა:
             "https://upload.wikimedia.org/wikipedia/commons/thumb/8/88/United-states_flag_icon_round.svg/2048px-United-states_flag_icon_round.svg.png",
         }}
-        items={["საქართველო", "ამერიკა"]}
+        // items={}
         onSelect={(item) => {
           setCountry(item);
         }}

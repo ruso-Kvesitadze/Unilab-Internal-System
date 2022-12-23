@@ -63,19 +63,23 @@ export const Dropdown = ({
         }
         transition={{ duration: 0.4, type: "spring" }}
       >
-        {items.map((item) => (
-          <SDropdownItem key={item}>
-            <SDropdownButton
-              onClick={() => {
-                onSelect(item);
-                setIsOpen(false);
-              }}
-              data-longestitem={getLongestString(items)}
-            >
-              {item}
-            </SDropdownButton>
-          </SDropdownItem>
-        ))}
+        {items ? (
+          items.map((item) => (
+            <SDropdownItem key={item}>
+              <SDropdownButton
+                onClick={() => {
+                  onSelect(item);
+                  setIsOpen(false);
+                }}
+                data-longestitem={getLongestString(items)}
+              >
+                {item}
+              </SDropdownButton>
+            </SDropdownItem>
+          ))
+        ) : (
+          <span>No items</span>
+        )}
       </SDropdownList>
     </SDropdownWrapper>
   );
