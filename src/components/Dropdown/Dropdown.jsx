@@ -26,6 +26,7 @@ export const Dropdown = ({
   items,
   selected,
   onSelect,
+  LeftComponent,
 }) => {
   const [isOpen, setIsOpen] = useState(false);
 
@@ -40,6 +41,8 @@ export const Dropdown = ({
         fontSize={fontSize}
         fontWeight={fontWeight}
         placeholder={placeholder}
+        readOnly
+        value={selected}
         RightComponent={
           <SArrowButton
             onClick={() => {
@@ -50,17 +53,15 @@ export const Dropdown = ({
             <DropArrow isOpen={isOpen} />
           </SArrowButton>
         }
-        readOnly
-        value={selected}
+        LeftComponent={LeftComponent}
       />
       <SDropdownList
         animate={
           isOpen
             ? { opacity: 1, top: "100%", pointerEvents: "all" }
             : { opacity: 0, top: "50%", pointerEvents: "none" }
-            
         }
-        transition={{duration: .4, type: 'spring'}}
+        transition={{ duration: 0.4, type: "spring" }}
       >
         {items.map((item) => (
           <SDropdownItem key={item}>

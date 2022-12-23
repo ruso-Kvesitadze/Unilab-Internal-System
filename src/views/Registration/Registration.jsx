@@ -2,9 +2,12 @@ import React, { useState } from "react";
 import { SecondHeader } from "../../components/SecondHeader";
 import { PhoneNumberInput } from "../../components/PhoneNumberInput";
 import { Dropdown } from "../../components/Dropdown";
+import { CountryDropdown } from "../../components/CountryDropdown/CountryDropdown";
+
 export const Registration = () => {
   const [phoneNumber, setPhoneNumber] = useState("");
   const [gender, setGender] = useState("");
+  const [country, setCountry] = useState("საქართველო");
 
   return (
     <div>
@@ -18,14 +21,29 @@ export const Registration = () => {
         onChange={(e) => setPhoneNumber(e.target.value)}
       />
       <Dropdown
-        label={"სქესი"}
+        label="სქესი"
         width="10rem"
-        placeholder={"-"}
+        placeholder="-"
         selected={gender}
         onSelect={(item) => {
           setGender(item);
         }}
         items={["მდედრობითი", "მამრობითი", "სხვა"]}
+      />
+      <CountryDropdown
+        label="ქვეყანა"
+        width="18.75rem"
+        selected={country}
+        icons={{
+          საქართველო:
+            "https://cdn.countryflags.com/thumbs/georgia/flag-round-250.png",
+          ამერიკა:
+            "https://upload.wikimedia.org/wikipedia/commons/thumb/8/88/United-states_flag_icon_round.svg/2048px-United-states_flag_icon_round.svg.png",
+        }}
+        items={["საქართველო", "ამერიკა"]}
+        onSelect={(item) => {
+          setCountry(item);
+        }}
       />
     </div>
   );

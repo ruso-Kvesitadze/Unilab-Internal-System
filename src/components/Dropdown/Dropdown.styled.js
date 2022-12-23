@@ -17,9 +17,11 @@ export const SDropdownList = styled(motion.ul)`
   background-color: #ffffff;
   border-radius: 0.625rem;
   margin-top: 0.375rem;
+  z-index: 1;
 `;
 
 export const SDropdownItem = styled.li`
+  display: flex;
   font-size: 0.875rem;
   color: #737373;
 `;
