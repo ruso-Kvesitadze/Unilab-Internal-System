@@ -58,7 +58,9 @@ export const Dropdown = ({
           isOpen
             ? { opacity: 1, top: "100%", pointerEvents: "all" }
             : { opacity: 0, top: "50%", pointerEvents: "none" }
+            
         }
+        transition={{duration: .4, type: 'spring'}}
       >
         {items.map((item) => (
           <SDropdownItem key={item}>
