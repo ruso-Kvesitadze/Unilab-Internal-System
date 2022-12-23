@@ -18,6 +18,10 @@ export const GlobalStyle = createGlobalStyle`
     src: url('./public/assets/fonts/FiraGO-Regular.woff2');
  }
 
+  ul, ol{
+    list-style-type: none;
+  }
+
   body {
     background-color: #090707; 
     font-family: "FiraGO-Regular";  
