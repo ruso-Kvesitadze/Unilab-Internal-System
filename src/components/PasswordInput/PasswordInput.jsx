@@ -7,6 +7,9 @@ export const PasswordInput = ({
   label,
   name,
   placeholder,
+  width,
+  fontSize,
+  fontWeight,
   value,
   onChange,
 }) => {
@@ -22,6 +25,9 @@ export const PasswordInput = ({
       type={isPasswordVisible ? "text" : "password"}
       label={label}
       name={name}
+      width={width}
+      fontSize={fontSize}
+      fontWeight={fontWeight}
       placeholder={placeholder}
       value={value}
       onChange={onChange}
