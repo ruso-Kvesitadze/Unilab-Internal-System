@@ -70,11 +70,7 @@ export const Dropdown = ({
                 onSelect(item);
                 setIsOpen(false);
               }}
-              data-longestItem={getLongestString(items)}
-              whileHover={{
-                fontWeight: "700",
-                textDecorationLine: "underline",
-              }}
+              data-longestitem={getLongestString(items)}
             >
               {item}
             </SDropdownButton>

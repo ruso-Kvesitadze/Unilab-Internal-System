@@ -37,9 +37,14 @@ export const SDropdownButton = styled(motion.button)`
   all: unset;
   cursor: pointer;
 
+  &:hover {
+    font-weight: 700;
+    text-decoration-line: underline;
+  }
+
   &::after {
     display: block;
-    content: attr(data-longestItem);
+    content: attr(data-longestitem);
     font-weight: 700;
     height: 1px;
     overflow: hidden;
