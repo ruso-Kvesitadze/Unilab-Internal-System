@@ -3,11 +3,13 @@ import { SecondHeader } from "../../components/SecondHeader";
 import { PhoneNumberInput } from "../../components/PhoneNumberInput";
 import { Dropdown } from "../../components/Dropdown";
 import { CountryDropdown } from "../../components/CountryDropdown/CountryDropdown";
+import { RadioInput } from "../../components/RadioInput/RadioInput";
 
 export const Registration = () => {
   const [phoneNumber, setPhoneNumber] = useState("");
   const [gender, setGender] = useState("");
   const [country, setCountry] = useState("საქართველო");
+  const [degree, setDegree] = useState("");
 
   return (
     <div>
@@ -44,6 +46,24 @@ export const Registration = () => {
         onSelect={(item) => {
           setCountry(item);
         }}
+      />
+      <RadioInput
+        id="bachelor"
+        label="ბაკალავრი"
+        value="bachelor"
+        name="degree"
+        isChecked={degree === "bachelor"}
+        onChange={(value) => {
+          setDegree(value);
+        }}
+      />
+      <RadioInput
+        id="masters"
+        label="მაგისტრატურა"
+        value="masters"
+        name="degree"
+        isChecked={degree === "masters"}
+        onChange={(value) => setDegree(value)}
       />
     </div>
   );
