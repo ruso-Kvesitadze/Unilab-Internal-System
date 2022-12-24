@@ -6,8 +6,11 @@ import {
   SPrivacyPolicy,
   STitle,
   SPreRegistrationSection,
-  SButton,
 } from "./PrivacyPolicy.styled";
+
+import { Button } from "../../components/Button";
+import { Link } from "react-router-dom";
+
 export const PrivacyPolicy = () => {
   return (
     <SPrivacyPolicyView>
@@ -62,9 +65,9 @@ export const PrivacyPolicy = () => {
             </li>
           </ul>
         </SPreRegistrationSection>
-        <SButton to="/registration" width="21.25rem">
-          გავეცანი
-        </SButton>
+        <Link to="/registration">
+          <Button width="21.25rem">გავეცანი</Button>
+        </Link>
       </SPrivacyPolicy>
       <Footer />
     </SPrivacyPolicyView>
