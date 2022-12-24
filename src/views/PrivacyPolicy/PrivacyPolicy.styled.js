@@ -28,12 +28,11 @@ export const SPreRegistrationSection = styled.section`
     margin-bottom:2.125rem;
 }
   ul {
-    list-style-type: none;
     margin-bottom: 5.5rem;
     li {
         margin: 0rem 5rem; 
         max-width: 80rem;  
-        Font size: 1rem;
+        font-size: 1rem;
         weight: 400; 
         margin-bottom: 1.875rem;
     }

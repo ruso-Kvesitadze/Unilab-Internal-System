@@ -10,6 +10,7 @@ export const Input = ({
   width,
   fontSize,
   fontWeight,
+  readOnly,
   value,
   onChange,
   LeftComponent,
@@ -28,6 +29,7 @@ export const Input = ({
           width={width}
           fontSize={fontSize}
           fontWeight={fontWeight}
+          readOnly={readOnly}
           value={value}
           onChange={onChange}
         />
