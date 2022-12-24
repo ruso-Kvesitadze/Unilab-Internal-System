@@ -11,11 +11,11 @@ export const GlobalStyle = createGlobalStyle`
 
   @font-face { 
     font-family: "Helvetica-Regular"; 
-    src: url("./public/assets/fonts/Helvetica.ttf");
+    src: url("assets/fonts/Helvetica.ttf");
   };
   @font-face {
     font-family: 'FiraGO-Regular';
-    src: url('./public/assets/fonts/FiraGO-Regular.woff2');
+    src: url('assets/fonts/FiraGO-Regular.woff2');
  }
 
   ul, ol{

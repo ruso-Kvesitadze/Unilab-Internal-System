@@ -82,9 +82,9 @@ export const Authentication = () => {
         </SRegistrationText>
       </SForm>
       <SAuthenticationSvgs>
-        <SVectorSvg src="./public/assets/svg/vector.svg" alt="vector" />
-        <StarTopSvg src="./public/assets/svg/starTop.svg" alt="starTop" />
-        <StarBottomSvg src="./public/assets/svg/starBottom.svg" alt="starTop" />
+        <SVectorSvg src="assets/svg/vector.svg" alt="vector" />
+        <StarTopSvg src="assets/svg/starTop.svg" alt="starTop" />
+        <StarBottomSvg src="assets/svg/starBottom.svg" alt="starTop" />
       </SAuthenticationSvgs>
     </SAuthenticationView>
   );
