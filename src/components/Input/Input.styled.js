@@ -32,6 +32,7 @@ export const SInput = styled.input`
   width: 100%;
   font-size: ${({ fontSize }) => (fontSize ? fontSize : "0.875rem")};
   font-weight: ${({ fontWeight }) => (fontWeight ? fontWeight : "400")};
+  font-family: "FiraGO";
   padding: 0.75rem 0;
   color: #353535;
   background-color: transparent;
