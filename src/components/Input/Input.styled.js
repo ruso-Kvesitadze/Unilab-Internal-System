@@ -38,9 +38,13 @@ export const SInput = styled.input`
   background-color: transparent;
   border: none;
   outline: none;
-  
+
   &:-webkit-autofill,
   &:-webkit-autofill:focus {
     transition: background-color 600000s ease-in-out 0s;
+  }
+
+  &::-ms-reveal {
+    display: none;
   }
 `;
