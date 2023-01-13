@@ -15,6 +15,8 @@ import {
 } from "./Registration.styled";
 import { PasswordInput } from "../../components/PasswordInput";
 import { NumberInput } from "../../components/NumberInput";
+import { DateInput } from "../../components/DateInput";
+import dayjs from "dayjs";
 
 export const Registration = () => {
   const [firstName, setFirstName] = useState("");
@@ -118,15 +120,15 @@ export const Registration = () => {
         value={phoneNumber}
         onChange={(e) => setPhoneNumber(e.target.value)}
       />
-      <Input
-        type="text"
-        name="date"
-        label="დაბადების თარიღი"
+      <DateInput
+        label={"დაბადების თარიღი"}
         width="18.75rem"
-        placeholder="0123456789"
-        value={id}
-        onChange={(e) => {
-          setId(e.target.value);
+        maxDate={dayjs().subtract(18, "year")}
+        defaultDate={dayjs().subtract(18, "year")}
+        placeholder="15.10.2022"
+        selectedDate={dateOfBirth?.format("DD.MM.YYYY")}
+        onSelect={(date) => {
+          setDateOfBirth(date);
         }}
       />
       <Dropdown

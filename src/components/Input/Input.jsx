@@ -13,6 +13,7 @@ export const Input = ({
   readOnly,
   value,
   onChange,
+  onClick,
   LeftComponent,
   RightComponent,
 }) => {
@@ -30,8 +31,9 @@ export const Input = ({
           fontSize={fontSize}
           fontWeight={fontWeight}
           readOnly={readOnly}
-          value={value}
+          value={value || ""}
           onChange={onChange}
+          onClick={onClick}
         />
         {RightComponent}
       </SInputWrapper>
