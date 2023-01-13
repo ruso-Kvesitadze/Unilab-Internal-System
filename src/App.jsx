@@ -4,6 +4,11 @@ import { Authentication } from "./views/Authentication";
 import { PrivacyPolicy } from "./views/PrivacyPolicy";
 import { RecoveryPassword } from "./views/RecoveryPassword";
 import { Registration } from "./views/Registration";
+import dayjs from "dayjs";
+import "dayjs/locale/ka";
+
+dayjs.locale("ka");
+
 const App = () => {
   return (
     <div>

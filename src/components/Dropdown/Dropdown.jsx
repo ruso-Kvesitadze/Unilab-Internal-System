@@ -46,7 +46,6 @@ export const Dropdown = ({
         RightComponent={
           <SArrowButton
             onClick={() => {
-              console.log("open");
               setIsOpen(!isOpen);
             }}
           >
