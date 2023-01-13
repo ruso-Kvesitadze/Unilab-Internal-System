@@ -14,6 +14,7 @@ import {
   STitle,
 } from "./Registration.styled";
 import { PasswordInput } from "../../components/PasswordInput";
+import { NumberInput } from "../../components/NumberInput";
 
 export const Registration = () => {
   const [firstName, setFirstName] = useState("");
@@ -64,9 +65,8 @@ export const Registration = () => {
           setLastName(e.target.value);
         }}
       />
-      <Input
+      <NumberInput
         id="id"
-        type="text"
         name="id"
         label="პირადი ნომერი"
         width="18.75rem"
