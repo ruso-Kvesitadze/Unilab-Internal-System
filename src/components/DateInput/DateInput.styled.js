@@ -4,9 +4,6 @@ import { motion } from "framer-motion";
 export const SDateInputWrapper = styled.div`
   position: relative;
   width: fit-content;
-  & input {
-    cursor: pointer;
-  }
 `;
 
 export const SDatePickerWrapper = styled(motion.div)`

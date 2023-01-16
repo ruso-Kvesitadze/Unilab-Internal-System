@@ -9,6 +9,7 @@ import {
   SCalendarIconContainer,
   SCalendarIcon,
 } from "./DateInput.styled";
+import { datePickerVariants } from "./DateInput.variants";
 
 export const DateInput = ({
   id,
@@ -22,7 +23,6 @@ export const DateInput = ({
   fontWeight,
   selectedDate,
   onSelect,
-  LeftComponent,
   RightComponent,
 }) => {
   const [isOpen, setIsOpen] = useState(false);
@@ -44,20 +44,18 @@ export const DateInput = ({
         placeholder={placeholder}
         readOnly
         value={selectedDate}
+        onClick={() => setIsOpen(!isOpen)}
         LeftComponent={
           <SCalendarIconContainer>
             <SCalendarIcon src="assets/svg/calendar.svg" alt="calendar" />
           </SCalendarIconContainer>
         }
         RightComponent={RightComponent}
-        onClick={() => setIsOpen(!isOpen)}
       />
       <SDatePickerWrapper
-        animate={
-          isOpen
-            ? { opacity: 1, top: "100%", pointerEvents: "all" }
-            : { opacity: 0, top: "50%", pointerEvents: "none" }
-        }
+        variants={datePickerVariants}
+        initial={"hidden"}
+        animate={isOpen ? "visible" : "hidden"}
         transition={{ duration: 0.4, type: "spring" }}
       >
         <DatePicker
