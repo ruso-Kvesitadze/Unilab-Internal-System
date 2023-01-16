@@ -5,6 +5,7 @@ export const Button = ({
   type,
   secondary,
   width,
+  margin,
   fontSize,
   fontWeight,
   onClick,
@@ -13,6 +14,7 @@ export const Button = ({
   return (
     <SButton
       width={width}
+      margin={margin}
       fontSize={fontSize}
       fontWeight={fontWeight}
       type={type}

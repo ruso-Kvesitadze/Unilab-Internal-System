@@ -10,6 +10,7 @@ export const Input = ({
   width,
   fontSize,
   fontWeight,
+  gridArea,
   readOnly,
   value,
   onChange,
@@ -18,7 +19,7 @@ export const Input = ({
   RightComponent,
 }) => {
   return (
-    <SContainer width={width}>
+    <SContainer width={width} gridArea={gridArea}>
       <SLabel htmlFor={id}>{label}</SLabel>
       <SInputWrapper>
         {LeftComponent}

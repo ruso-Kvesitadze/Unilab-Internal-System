@@ -8,16 +8,22 @@ import { Input } from "../../components/Input";
 import { Checkbox } from "../../components/Checkbox/Checkbox";
 import { Button } from "../../components/Button";
 import {
+  SRegistrationMainDiv,
+  SContainer,
+  SGridContainer,
   SAuthenticationLink,
   SAuthenticationText,
   SDescription,
   STitle,
+  ScenterDiv,
+  SPrivacyCheckbox,
+  SPrivacyCheckboxImg,
 } from "./Registration.styled";
 import { PasswordInput } from "../../components/PasswordInput";
 import { NumberInput } from "../../components/NumberInput";
 import { DateInput } from "../../components/DateInput";
 import dayjs from "dayjs";
-
+import { Link } from "react-router-dom";
 export const Registration = () => {
   const [firstName, setFirstName] = useState("");
   const [lastName, setLastName] = useState("");
@@ -37,181 +43,200 @@ export const Registration = () => {
   const [degree, setDegree] = useState("");
 
   return (
-    <div>
+    <SRegistrationMainDiv>
       <SecondHeader />
       <STitle>გამარჯობა 👋</STitle>
       <SDescription>
         უნილაბის სამართავ პანელში მოსახვედრად, გთხოვთ გაიაროთ ავტორიზაცია
       </SDescription>
-      <Input
-        id="firstName"
-        type="text"
-        name="firstName"
-        label="სახელი"
-        width="18.75rem"
-        placeholder="სახელი"
-        value={firstName}
-        onChange={(e) => {
-          setFirstName(e.target.value);
-        }}
-      />
-      <Input
-        id="lastName"
-        type="text"
-        name="lastName"
-        label="გვარი"
-        width="18.75rem"
-        placeholder="გვარი"
-        value={lastName}
-        onChange={(e) => {
-          setLastName(e.target.value);
-        }}
-      />
-      <NumberInput
-        id="id"
-        name="id"
-        label="პირადი ნომერი"
-        width="18.75rem"
-        placeholder="0123456789"
-        value={id}
-        onChange={(e) => {
-          setId(e.target.value);
-        }}
-      />
-      <Input
-        id="email"
-        type="email"
-        name="email"
-        label="ელ-ფოსტა"
-        width="18.75rem"
-        placeholder="info@unilab.ge"
-        value={email}
-        onChange={(e) => {
-          setEmail(e.target.value);
-        }}
-      />
-      <PasswordInput
-        id="password"
-        name="password"
-        label="პაროლი"
-        width="18.75rem"
-        placeholder="***************"
-        value={password}
-        onChange={(e) => {
-          setPassword(e.target.value);
-        }}
-      />
-      <PasswordInput
-        id="password"
-        name="password"
-        label="პაროლი განმეორებით"
-        width="18.75rem"
-        placeholder="***************"
-        value={confirmPassword}
-        onChange={(e) => {
-          setConfirmPassword(e.target.value);
-        }}
-      />
-      <PhoneNumberInput
-        label="მობილურის ნომერი"
-        width="18.75rem"
-        fontSize="1rem"
-        countryCode={995}
-        value={phoneNumber}
-        onChange={(e) => setPhoneNumber(e.target.value)}
-      />
-      <DateInput
-        label={"დაბადების თარიღი"}
-        width="18.75rem"
-        maxDate={dayjs().subtract(18, "year")}
-        defaultDate={dayjs().subtract(18, "year")}
-        placeholder="15.10.2022"
-        selectedDate={dateOfBirth?.format("DD.MM.YYYY")}
-        onSelect={(date) => {
-          setDateOfBirth(date);
-        }}
-      />
-      <Dropdown
-        label="სქესი"
-        width="10rem"
-        placeholder="-"
-        selected={gender}
-        onSelect={(item) => {
-          setGender(item);
-        }}
-        items={["მდედრობითი", "მამრობითი", "სხვა"]}
-      />
+      <SContainer>
+        <SGridContainer>
+          <Input
+            id="firstName"
+            type="text"
+            name="firstName"
+            label="სახელი"
+            width="18.75rem"
+            placeholder="სახელი"
+            value={firstName}
+            onChange={(e) => {
+              setFirstName(e.target.value);
+            }}
+          />
+          <Input
+            id="lastName"
+            type="text"
+            name="lastName"
+            label="გვარი"
+            width="18.75rem"
+            placeholder="გვარი"
+            value={lastName}
+            onChange={(e) => {
+              setLastName(e.target.value);
+            }}
+          />
+          <NumberInput
+            id="id"
+            name="id"
+            label="პირადი ნომერი"
+            width="18.75rem"
+            placeholder="0123456789"
+            value={id}
+            onChange={(e) => {
+              setId(e.target.value);
+            }}
+          />
+          <Input
+            id="email"
+            type="email"
+            name="email"
+            label="ელ-ფოსტა"
+            width="18.75rem"
+            placeholder="info@unilab.ge"
+            value={email}
+            onChange={(e) => {
+              setEmail(e.target.value);
+            }}
+          />
+          <PasswordInput
+            id="password"
+            name="password"
+            label="პაროლი"
+            width="18.75rem"
+            placeholder="***************"
+            value={password}
+            onChange={(e) => {
+              setPassword(e.target.value);
+            }}
+          />
+          <PasswordInput
+            id="password"
+            name="password"
+            label="პაროლი განმეორებით"
+            width="18.75rem"
+            placeholder="***************"
+            value={confirmPassword}
+            onChange={(e) => {
+              setConfirmPassword(e.target.value);
+            }}
+          />
+          <PhoneNumberInput
+            label="მობილურის ნომერი"
+            width="18.75rem"
+            fontSize="1rem"
+            countryCode={995}
+            value={phoneNumber}
+            onChange={(e) => setPhoneNumber(e.target.value)}
+          />
+          <DateInput
+            label={"დაბადების თარიღი"}
+            width="18.75rem"
+            maxDate={dayjs().subtract(18, "year")}
+            defaultDate={dayjs().subtract(18, "year")}
+            placeholder="15.10.2022"
+            selectedDate={dateOfBirth?.format("DD.MM.YYYY")}
+            onSelect={(date) => {
+              setDateOfBirth(date);
+            }}
+          />
+          <Dropdown
+            label="სქესი"
+            width="10rem"
+            placeholder="-"
+            selected={gender}
+            onSelect={(item) => {
+              setGender(item);
+            }}
+            items={["მდედრობითი", "მამრობითი", "სხვა"]}
+          />
+          <CountryDropdown
+            label="ქვეყანა"
+            width="18.75rem"
+            selected={country}
+            icons={{
+              საქართველო:
+                "https://cdn.countryflags.com/thumbs/georgia/flag-round-250.png",
+              ამერიკა:
+                "https://upload.wikimedia.org/wikipedia/commons/thumb/8/88/United-states_flag_icon_round.svg/2048px-United-states_flag_icon_round.svg.png",
+            }}
+            items={["საქართველო", "ამერიკა"]}
+            onSelect={(item) => {
+              setCountry(item);
+            }}
+          />
+          <Dropdown
+            label="რეგიონი"
+            width="18.75rem"
+            placeholder="აირჩიეთ რეგიონი"
+            selected={region}
+            onSelect={(item) => {
+              setRegion(item);
+            }}
+            items={["1", "2", "3"]}
+          />
+          <Dropdown
+            label="ქალაქი"
+            width="18.75rem"
+            placeholder="აირჩიეთ ქალაქი"
+            selected={city}
+            onSelect={(item) => {
+              setCity(item);
+            }}
+            items={["1", "2", "3"]}
+          />
 
-      <CountryDropdown
-        label="ქვეყანა"
-        width="18.75rem"
-        selected={country}
-        icons={{
-          საქართველო:
-            "https://cdn.countryflags.com/thumbs/georgia/flag-round-250.png",
-          ამერიკა:
-            "https://upload.wikimedia.org/wikipedia/commons/thumb/8/88/United-states_flag_icon_round.svg/2048px-United-states_flag_icon_round.svg.png",
-        }}
-        items={["საქართველო", "ამერიკა"]}
-        onSelect={(item) => {
-          setCountry(item);
-        }}
-      />
-      <Dropdown
-        label="რეგიონი"
-        width="18.75rem"
-        placeholder="აირჩიეთ რეგიონი"
-        selected={region}
-        onSelect={(item) => {
-          setRegion(item);
-        }}
-        items={["1", "2", "3"]}
-      />
-      <Dropdown
-        label="ქალაქი"
-        width="18.75rem"
-        placeholder="აირჩიეთ ქალაქი"
-        selected={city}
-        onSelect={(item) => {
-          setCity(item);
-        }}
-        items={["1", "2", "3"]}
-      />
-      <Input
-        type="text"
-        name="fullAdress"
-        label="სრული მისამართი, ქუჩა, ნომერი, შენობა"
-        width="42.125rem"
-        placeholder="ჩაწერეთ სრული მისამართი"
-        value={fullAddress}
-        onChange={(e) => {
-          setFullAddress(e.target.value);
-        }}
-      />
-      <Dropdown
-        label="სტატუსი"
-        width="18.75rem"
-        placeholder="აირჩიეთ სტატუსი"
-        selected={status}
-        onSelect={(item) => {
-          setStatus(item);
-        }}
-        items={["მოსწავლე", "სტუდენტი", "კურსდამთავრებული", "სხვა"]}
-      />
-      <Checkbox
-        id="accept"
-        name="accept"
-        label="ვეთანხმები მოხმარების წესებსა და კონფიდენციალურობის პოლიტიკას"
-        isChecked={didAccept}
-        onChange={() => {
-          setDidAccept(!didAccept);
-        }}
-      />
-      <Button width="21.25rem">რეგისტრაცია</Button>
-      <SAuthenticationText>
-        უკვე გაქვს ანგარიში?{" "}
-        <SAuthenticationLink to="/">გაიარე ავტორიზაცია</SAuthenticationLink>
-      </SAuthenticationText>
+          <Input
+            type="text"
+            name="fullAdress"
+            label="სრული მისამართი, ქუჩა, ნომერი, შენობა"
+            width="42.125rem"
+            gridArea="auto / 1 / auto / 4"
+            placeholder="ჩაწერეთ სრული მისამართი"
+            value={fullAddress}
+            onChange={(e) => {
+              setFullAddress(e.target.value);
+            }}
+          />
+
+          <Dropdown
+            label="სტატუსი"
+            width="18.75rem"
+            placeholder="აირჩიეთ სტატუსი"
+            selected={status}
+            onSelect={(item) => {
+              setStatus(item);
+            }}
+            items={["მოსწავლე", "სტუდენტი", "კურსდამთავრებული", "სხვა"]}
+          />
+        </SGridContainer>
+      </SContainer>
+      <ScenterDiv>
+        <SPrivacyCheckbox>
+          <Checkbox
+            id="accept"
+            name="accept"
+            label="ვეთანხმები მოხმარების წესებსა და კონფიდენციალურობის პოლიტიკას"
+            isChecked={didAccept}
+            onChange={() => {
+              setDidAccept(!didAccept);
+            }}
+          />
+          <Link target={"_blank"} to="/privacy-policy">
+            <SPrivacyCheckboxImg
+              src="assets/svg/externalLink.svg"
+              alt="externalLink"
+            />
+          </Link>
+        </SPrivacyCheckbox>
+
+        <Button width="21.25rem" margin="2.5rem 0">
+          რეგისტრაცია
+        </Button>
+        <SAuthenticationText>
+          უკვე გაქვს ანგარიში?
+          <SAuthenticationLink to="/">გაიარე ავტორიზაცია</SAuthenticationLink>
+        </SAuthenticationText>
+      </ScenterDiv>
       {/* <RadioInput
         id="bachelor"
         label="ბაკალავრი"
@@ -230,6 +255,6 @@ export const Registration = () => {
         isChecked={degree === "masters"}
         onChange={(value) => setDegree(value)}
       /> */}
-    </div>
+    </SRegistrationMainDiv>
   );
 };
