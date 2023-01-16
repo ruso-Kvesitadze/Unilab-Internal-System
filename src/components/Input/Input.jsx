@@ -19,7 +19,7 @@ export const Input = ({
   RightComponent,
 }) => {
   return (
-    <SContainer width={width} gridArea={gridArea}>
+    <SContainer width={width} gridArea={gridArea} onClick={onClick}>
       <SLabel htmlFor={id}>{label}</SLabel>
       <SInputWrapper>
         {LeftComponent}
@@ -34,7 +34,6 @@ export const Input = ({
           readOnly={readOnly}
           value={value || ""}
           onChange={onChange}
-          onClick={onClick}
         />
         {RightComponent}
       </SInputWrapper>
