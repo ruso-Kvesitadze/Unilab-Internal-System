@@ -4,7 +4,7 @@ export const SContainer = styled.div`
   display: flex;
   flex-direction: column;
   width: ${({ width }) => (width ? width : "100%")};
-  grid-area: ${({ gridArea }) => (gridArea ? gridArea : "")};
+  grid-area: ${({ gridArea }) => (gridArea ? gridArea : null)};
   gap: 0.5rem;
 `;
 

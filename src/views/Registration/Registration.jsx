@@ -3,10 +3,11 @@ import { SecondHeader } from "../../components/SecondHeader";
 import { PhoneNumberInput } from "../../components/PhoneNumberInput";
 import { Dropdown } from "../../components/Dropdown";
 import { CountryDropdown } from "../../components/CountryDropdown/CountryDropdown";
-import { RadioInput } from "../../components/RadioInput/RadioInput";
 import { Input } from "../../components/Input";
 import { Checkbox } from "../../components/Checkbox/Checkbox";
 import { Button } from "../../components/Button";
+import { AdditionalInfoSchool } from "../../components/AdditionalInformation/AdditionalInfoSchool";
+import { AdditionalInfoUniversity } from "../../components/AdditionalInformation/AdditionalInfoUniversity";
 import {
   SRegistrationMainDiv,
   SContainer,
@@ -18,6 +19,11 @@ import {
   ScenterDiv,
   SPrivacyCheckbox,
   SPrivacyCheckboxImg,
+  SBorderBottom,
+  SRegistrationSvgs,
+  SStarLeftTop,
+  SStarLeftBottom,
+  SVectorRight,
 } from "./Registration.styled";
 import { PasswordInput } from "../../components/PasswordInput";
 import { NumberInput } from "../../components/NumberInput";
@@ -40,7 +46,6 @@ export const Registration = () => {
   const [fullAddress, setFullAddress] = useState("");
   const [didAccept, setDidAccept] = useState(false);
   const [status, setStatus] = useState("");
-  const [degree, setDegree] = useState("");
 
   return (
     <SRegistrationMainDiv>
@@ -110,8 +115,8 @@ export const Registration = () => {
             }}
           />
           <PasswordInput
-            id="password"
-            name="password"
+            id="confirmPassword"
+            name="confirmPassword"
             label="პაროლი განმეორებით"
             width="18.75rem"
             placeholder="***************"
@@ -184,7 +189,6 @@ export const Registration = () => {
             }}
             items={["1", "2", "3"]}
           />
-
           <Input
             type="text"
             name="fullAdress"
@@ -197,10 +201,10 @@ export const Registration = () => {
               setFullAddress(e.target.value);
             }}
           />
-
           <Dropdown
             label="სტატუსი"
             width="18.75rem"
+            gridArea="auto / 1 / auto / 4"
             placeholder="აირჩიეთ სტატუსი"
             selected={status}
             onSelect={(item) => {
@@ -208,8 +212,14 @@ export const Registration = () => {
             }}
             items={["მოსწავლე", "სტუდენტი", "კურსდამთავრებული", "სხვა"]}
           />
+
+          {status === "მოსწავლე" || status === "სტუდენტი" ? (
+            <SBorderBottom></SBorderBottom>
+          ) : null}
         </SGridContainer>
       </SContainer>
+      {status == "მოსწავლე" && <AdditionalInfoSchool />}
+      {status == "სტუდენტი" && <AdditionalInfoUniversity />}
       <ScenterDiv>
         <SPrivacyCheckbox>
           <Checkbox
@@ -237,24 +247,14 @@ export const Registration = () => {
           <SAuthenticationLink to="/">გაიარე ავტორიზაცია</SAuthenticationLink>
         </SAuthenticationText>
       </ScenterDiv>
-      {/* <RadioInput
-        id="bachelor"
-        label="ბაკალავრი"
-        value="bachelor"
-        name="degree"
-        isChecked={degree === "bachelor"}
-        onChange={(value) => {
-          setDegree(value);
-        }}
-      />
-      <RadioInput
-        id="masters"
-        label="მაგისტრატურა"
-        value="masters"
-        name="degree"
-        isChecked={degree === "masters"}
-        onChange={(value) => setDegree(value)}
-      /> */}
+      <SRegistrationSvgs>
+        <SStarLeftTop
+          src="assets/svg/RStarLeftBottom.svg"
+          alt="StarLeftBottom"
+        />
+        <SStarLeftBottom src="assets/svg/RStarLeftTop.svg" alt="StarLeftTop" />
+        <SVectorRight src="assets/svg/RVectorRight.svg" alt="VectorRight" />
+      </SRegistrationSvgs>
     </SRegistrationMainDiv>
   );
 };

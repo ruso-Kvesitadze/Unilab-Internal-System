@@ -1,0 +1,1 @@
+export { AdditionalInfoUniversity } from "./AdditionalInfoUniversity";
