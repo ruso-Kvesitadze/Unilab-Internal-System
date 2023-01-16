@@ -12,12 +12,14 @@ export const SDropdownList = styled(motion.ul)`
   display: flex;
   top: 100%;
   right: 0;
+  max-height: 11rem;
   flex-direction: column;
   gap: 0.875rem;
   padding: 1.375rem;
   background-color: #ffffff;
   border-radius: 0.625rem;
   margin-top: 0.375rem;
+  overflow-y: scroll;
   z-index: 1;
 `;
 
