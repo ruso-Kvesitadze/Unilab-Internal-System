@@ -3,7 +3,12 @@ import { Input } from "../Input";
 import DatePicker from "uni-date-picker";
 import { Button } from "../Button";
 import dayjs from "dayjs";
-import { SDateInputWrapper, SDatePickerWrapper } from "./DateInput.styled";
+import {
+  SDateInputWrapper,
+  SDatePickerWrapper,
+  SCalendarIconContainer,
+  SCalendarIcon,
+} from "./DateInput.styled";
 
 export const DateInput = ({
   id,
@@ -39,7 +44,11 @@ export const DateInput = ({
         placeholder={placeholder}
         readOnly
         value={selectedDate}
-        LeftComponent={LeftComponent}
+        LeftComponent={
+          <SCalendarIconContainer>
+            <SCalendarIcon src="assets/svg/calendar.svg" alt="calendar" />
+          </SCalendarIconContainer>
+        }
         RightComponent={RightComponent}
         onClick={() => setIsOpen(!isOpen)}
       />

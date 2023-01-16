@@ -3,6 +3,7 @@ import styled from "styled-components";
 export const SContainer = styled.div`
   display: flex;
   gap: 0.5rem;
+  align-self: flex-end;
 `;
 
 export const SInputWrapper = styled.div`

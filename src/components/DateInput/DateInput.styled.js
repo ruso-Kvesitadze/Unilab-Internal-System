@@ -17,3 +17,14 @@ export const SDatePickerWrapper = styled(motion.div)`
   margin-top: 0.375rem;
   z-index: 1;
 `;
+
+export const SCalendarIconContainer = styled.div`
+  display: flex;
+  padding-right: 0.6875rem;
+  border-right: solid 0.5px #dadada;
+  height: 1.875rem;
+  align-items: center;
+`;
+export const SCalendarIcon = styled.img`
+  height: 1.4rem;
+`;
