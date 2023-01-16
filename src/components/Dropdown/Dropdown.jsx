@@ -8,6 +8,7 @@ import {
   SDropdownWrapper,
 } from "./Dropdown.styled";
 import { DropArrow } from "../DropArrow";
+import { dropdownVariants } from "./Dropdown.variants";
 
 const getLongestString = (strings) => {
   return strings.reduce((a, b) => {
@@ -55,11 +56,9 @@ export const Dropdown = ({
         LeftComponent={LeftComponent}
       />
       <SDropdownList
-        animate={
-          isOpen
-            ? { opacity: 1, top: "100%", pointerEvents: "all" }
-            : { opacity: 0, top: "50%", pointerEvents: "none" }
-        }
+        variants={dropdownVariants}
+        initial={"hidden"}
+        animate={isOpen ? "visible" : "hidden"}
         transition={{ duration: 0.4, type: "spring" }}
       >
         {items ? (
