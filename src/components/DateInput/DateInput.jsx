@@ -22,7 +22,6 @@ export const DateInput = ({
   fontWeight,
   selectedDate,
   onSelect,
-  LeftComponent,
   RightComponent,
 }) => {
   const [isOpen, setIsOpen] = useState(false);
@@ -44,13 +43,13 @@ export const DateInput = ({
         placeholder={placeholder}
         readOnly
         value={selectedDate}
+        onClick={() => setIsOpen(!isOpen)}
         LeftComponent={
           <SCalendarIconContainer>
             <SCalendarIcon src="assets/svg/calendar.svg" alt="calendar" />
           </SCalendarIconContainer>
         }
         RightComponent={RightComponent}
-        onClick={() => setIsOpen(!isOpen)}
       />
       <SDatePickerWrapper
         animate={

@@ -6,6 +6,11 @@ export const SContainer = styled.div`
   width: ${({ width }) => (width ? width : "100%")};
   grid-area: ${({ gridArea }) => (gridArea ? gridArea : null)};
   gap: 0.5rem;
+  cursor: ${({ onClick }) => (onClick ? "pointer" : "auto")};
+
+  & input {
+    pointer-events: ${({ onClick }) => (onClick ? "none" : "auto")};
+  }
 `;
 
 export const SLabel = styled.label`

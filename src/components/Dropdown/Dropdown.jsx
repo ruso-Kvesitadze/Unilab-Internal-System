@@ -32,12 +32,7 @@ export const Dropdown = ({
   const [isOpen, setIsOpen] = useState(false);
 
   return (
-    <SDropdownWrapper
-      gridArea={gridArea}
-      onClick={() => {
-        setIsOpen(!isOpen);
-      }}
-    >
+    <SDropdownWrapper gridArea={gridArea}>
       <Input
         id={id}
         type={"text"}
@@ -49,6 +44,9 @@ export const Dropdown = ({
         placeholder={placeholder}
         readOnly
         value={selected}
+        onClick={() => {
+          setIsOpen(!isOpen);
+        }}
         RightComponent={
           <SArrowButton>
             <DropArrow isOpen={isOpen} />
