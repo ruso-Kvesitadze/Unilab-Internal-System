@@ -4,6 +4,7 @@ export const SContainer = styled.div`
   display: flex;
   flex-direction: column;
   width: ${({ width }) => (width ? width : "100%")};
+  grid-area: ${({ gridArea }) => (gridArea ? gridArea : null)};
   gap: 0.5rem;
 `;
 
@@ -38,9 +39,13 @@ export const SInput = styled.input`
   background-color: transparent;
   border: none;
   outline: none;
-  
+
   &:-webkit-autofill,
   &:-webkit-autofill:focus {
     transition: background-color 600000s ease-in-out 0s;
+  }
+
+  &::-ms-reveal {
+    display: none;
   }
 `;

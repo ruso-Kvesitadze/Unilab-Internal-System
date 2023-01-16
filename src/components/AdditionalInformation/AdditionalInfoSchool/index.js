@@ -1,0 +1,1 @@
+export { AdditionalInfoSchool } from "./AdditionalInfoSchool";

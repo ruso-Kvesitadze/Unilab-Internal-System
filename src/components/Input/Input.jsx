@@ -10,14 +10,16 @@ export const Input = ({
   width,
   fontSize,
   fontWeight,
+  gridArea,
   readOnly,
   value,
   onChange,
+  onClick,
   LeftComponent,
   RightComponent,
 }) => {
   return (
-    <SContainer width={width}>
+    <SContainer width={width} gridArea={gridArea} onClick={onClick}>
       <SLabel htmlFor={id}>{label}</SLabel>
       <SInputWrapper>
         {LeftComponent}
@@ -30,7 +32,7 @@ export const Input = ({
           fontSize={fontSize}
           fontWeight={fontWeight}
           readOnly={readOnly}
-          value={value}
+          value={value || ""}
           onChange={onChange}
         />
         {RightComponent}
