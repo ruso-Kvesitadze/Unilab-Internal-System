@@ -10,7 +10,7 @@ export const Check = ({ isChecked }) => {
       viewBox="0 0 24 24"
       fill="none"
       stroke="#ffffff"
-      strokeWidth={2}
+      strokeWidth={3}
       strokeLinecap="round"
       strokeLinejoin="round"
       className="feather feather-check"

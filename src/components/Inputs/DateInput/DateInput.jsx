@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { Input } from "../Input";
 import DatePicker from "uni-date-picker";
-import { Button } from "../Button";
+import { Button } from "../../Button";
 import dayjs from "dayjs";
 import {
   SDateInputWrapper,

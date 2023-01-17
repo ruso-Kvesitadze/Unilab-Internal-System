@@ -7,14 +7,9 @@ import {
   SDropdownList,
   SDropdownWrapper,
 } from "./Dropdown.styled";
-import { DropArrow } from "../DropArrow";
+import { DropArrow } from "./DropArrow";
 import { dropdownVariants } from "./Dropdown.variants";
-
-const getLongestString = (strings) => {
-  return strings.reduce((a, b) => {
-    return a.length > b.length ? a : b;
-  });
-};
+import { getLongestString } from "../../../utils/dropdown";
 
 export const Dropdown = ({
   id,
@@ -49,7 +44,7 @@ export const Dropdown = ({
           setIsOpen(!isOpen);
         }}
         RightComponent={
-          <SArrowButton>
+          <SArrowButton title="toggle dropdown">
             <DropArrow isOpen={isOpen} />
           </SArrowButton>
         }

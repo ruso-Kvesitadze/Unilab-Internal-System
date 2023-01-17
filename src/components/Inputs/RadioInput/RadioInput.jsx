@@ -6,7 +6,7 @@ import {
   SInputWrapper,
   SLabel,
 } from "./RadioInput.styled";
-import { CircleCheck } from "../CircleCheck";
+import { CircleCheck } from "./CircleCheck";
 
 export const RadioInput = ({ id, label, name, value, isChecked, onChange }) => {
   return (

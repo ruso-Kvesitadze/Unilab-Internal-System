@@ -1,10 +1,13 @@
 import React, { useState } from "react";
 import { SecondHeader } from "../../components/SecondHeader";
-import { PhoneNumberInput } from "../../components/PhoneNumberInput";
-import { Dropdown } from "../../components/Dropdown";
-import { CountryDropdown } from "../../components/CountryDropdown/CountryDropdown";
-import { Input } from "../../components/Input";
-import { Checkbox } from "../../components/Checkbox/Checkbox";
+import { PhoneNumberInput } from "../../components/Inputs/PhoneNumberInput";
+import { Dropdown } from "../../components/Inputs/Dropdown";
+import { CountryDropdown } from "../../components/Inputs/CountryDropdown";
+import { Input } from "../../components/Inputs/Input";
+import { Checkbox } from "../../components/Inputs/Checkbox/Checkbox";
+import { PasswordInput } from "../../components/Inputs/PasswordInput";
+import { NumberInput } from "../../components/Inputs/NumberInput";
+import { DateInput } from "../../components/Inputs/DateInput";
 import { Button } from "../../components/Button";
 import { AdditionalInfoSchool } from "../../components/AdditionalInformation/AdditionalInfoSchool";
 import { AdditionalInfoUniversity } from "../../components/AdditionalInformation/AdditionalInfoUniversity";
@@ -27,9 +30,6 @@ import {
 } from "./Registration.styled";
 import { motion } from "framer-motion";
 
-import { PasswordInput } from "../../components/PasswordInput";
-import { NumberInput } from "../../components/NumberInput";
-import { DateInput } from "../../components/DateInput";
 import dayjs from "dayjs";
 import { Link } from "react-router-dom";
 export const Registration = () => {
@@ -110,7 +110,7 @@ export const Registration = () => {
             name="password"
             label="პაროლი"
             width="18.75rem"
-            placeholder="***************"
+            placeholder="●●●●●●●●"
             value={password}
             onChange={(e) => {
               setPassword(e.target.value);
@@ -121,13 +121,14 @@ export const Registration = () => {
             name="confirmPassword"
             label="პაროლი განმეორებით"
             width="18.75rem"
-            placeholder="***************"
+            placeholder="●●●●●●●●"
             value={confirmPassword}
             onChange={(e) => {
               setConfirmPassword(e.target.value);
             }}
           />
           <PhoneNumberInput
+            id="phoneNumber"
             label="მობილურის ნომერი"
             width="18.75rem"
             fontSize="1rem"
@@ -136,6 +137,7 @@ export const Registration = () => {
             onChange={(e) => setPhoneNumber(e.target.value)}
           />
           <DateInput
+            id="dateOfBirth"
             label={"დაბადების თარიღი"}
             width="18.75rem"
             maxDate={dayjs().subtract(18, "year")}
@@ -147,6 +149,7 @@ export const Registration = () => {
             }}
           />
           <Dropdown
+            id="gender"
             label="სქესი"
             width="10rem"
             placeholder="-"
@@ -157,6 +160,7 @@ export const Registration = () => {
             items={["მდედრობითი", "მამრობითი", "სხვა"]}
           />
           <CountryDropdown
+            id="country"
             label="ქვეყანა"
             width="18.75rem"
             selected={country}
@@ -172,6 +176,7 @@ export const Registration = () => {
             }}
           />
           <Dropdown
+            id="region"
             label="რეგიონი"
             width="18.75rem"
             placeholder="აირჩიეთ რეგიონი"
@@ -182,6 +187,7 @@ export const Registration = () => {
             items={["1", "2", "3"]}
           />
           <Dropdown
+            id="city"
             label="ქალაქი"
             width="18.75rem"
             placeholder="აირჩიეთ ქალაქი"
@@ -192,6 +198,7 @@ export const Registration = () => {
             items={["1", "2", "3"]}
           />
           <Input
+            id="fullAdress"
             type="text"
             name="fullAdress"
             label="სრული მისამართი, ქუჩა, ნომერი, შენობა"
@@ -204,6 +211,7 @@ export const Registration = () => {
             }}
           />
           <Dropdown
+            id="status"
             label="სტატუსი"
             width="18.75rem"
             gridArea="auto / 1 / auto / 4"

@@ -12,12 +12,16 @@ export const SDropdownList = styled(motion.ul)`
   display: flex;
   top: 100%;
   right: 0;
+  max-height: 11rem;
+  max-width: 100%;
   flex-direction: column;
   gap: 0.875rem;
-  padding: 1.375rem;
+  padding: 1.375rem 0;
   background-color: #ffffff;
   border-radius: 0.625rem;
   margin-top: 0.375rem;
+  overflow-y: auto;
+  overflow-x: hidden;
   z-index: 1;
 `;
 
@@ -37,6 +41,7 @@ export const SArrowButton = styled.button`
 export const SDropdownButton = styled(motion.button)`
   all: unset;
   cursor: pointer;
+  padding: 0 1.375rem;
 
   &:hover {
     font-weight: 700;
@@ -47,7 +52,7 @@ export const SDropdownButton = styled(motion.button)`
     display: block;
     content: attr(data-longestitem);
     font-weight: 700;
-    height: 1px;
+    height: 0px;
     overflow: hidden;
     visibility: hidden;
   }

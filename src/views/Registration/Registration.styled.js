@@ -57,6 +57,8 @@ export const SPrivacyCheckbox = styled.div`
 export const SPrivacyCheckboxImg = styled.img`
   margin-left: 0.75rem;
   cursor: pointer;
+  width: 1.5rem;
+  height: 1.5rem;
 `;
 
 export const SDivisor = styled(motion.div)`

@@ -10,4 +10,5 @@ export const SCountryIconContainer = styled.div`
 
 export const SIcon = styled.img`
   height: 1.4rem;
+  width: 1.4rem;
 `;

@@ -1,7 +1,7 @@
 import React, { useState } from "react";
-import { PhoneNumberInput } from "../../PhoneNumberInput";
-import { Input } from "../../Input";
-import { Dropdown } from "../../Dropdown";
+import { PhoneNumberInput } from "../../Inputs/PhoneNumberInput";
+import { Input } from "../../Inputs/Input";
+import { Dropdown } from "../../Inputs/Dropdown";
 import {
   SAdditionalInformationText,
   SAdditionalInfoSchool,
@@ -35,6 +35,7 @@ export const AdditionalInfoSchool = () => {
             }}
           />
           <Dropdown
+          id="class"
             label="კლასი"
             width="5.5rem"
             gridArea="auto / 2 / auto / 4"
@@ -83,6 +84,7 @@ export const AdditionalInfoSchool = () => {
             }}
           />
           <PhoneNumberInput
+            id="parentPhoneNumber"
             label="მობილურის ნომერი"
             width="18.75rem"
             fontSize="1rem"
