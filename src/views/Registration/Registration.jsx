@@ -19,12 +19,14 @@ import {
   ScenterDiv,
   SPrivacyCheckbox,
   SPrivacyCheckboxImg,
-  SBorderBottom,
+  SDivisor,
   SRegistrationSvgs,
   SStarLeftTop,
   SStarLeftBottom,
   SVectorRight,
 } from "./Registration.styled";
+import { motion } from "framer-motion";
+
 import { PasswordInput } from "../../components/PasswordInput";
 import { NumberInput } from "../../components/NumberInput";
 import { DateInput } from "../../components/DateInput";
@@ -214,12 +216,34 @@ export const Registration = () => {
           />
 
           {status === "მოსწავლე" || status === "სტუდენტი" ? (
-            <SBorderBottom></SBorderBottom>
+            <SDivisor
+              initial={{ width: 0 }}
+              animate={{ width: "100%" }}
+              transition={{ duration: 0.5 }}
+            />
           ) : null}
         </SGridContainer>
       </SContainer>
-      {status == "მოსწავლე" && <AdditionalInfoSchool />}
-      {status == "სტუდენტი" && <AdditionalInfoUniversity />}
+
+      {status == "მოსწავლე" && (
+        <motion.div
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{ duration: 0.5 }}
+        >
+          <AdditionalInfoSchool />
+        </motion.div>
+      )}
+      {status == "სტუდენტი" && (
+        <motion.div
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{ duration: 0.5 }}
+        >
+          <AdditionalInfoUniversity />
+        </motion.div>
+      )}
+
       <ScenterDiv>
         <SPrivacyCheckbox>
           <Checkbox
@@ -252,8 +276,16 @@ export const Registration = () => {
           src="assets/svg/RStarLeftBottom.svg"
           alt="StarLeftBottom"
         />
-        <SStarLeftBottom src="assets/svg/RStarLeftTop.svg" alt="StarLeftTop" />
-        <SVectorRight src="assets/svg/RVectorRight.svg" alt="VectorRight" />
+        <SStarLeftBottom
+          src="assets/svg/RStarLeftTop.svg"
+          alt="StarLeftTop"
+          layout
+        />
+        <SVectorRight
+          src="assets/svg/RVectorRight.svg"
+          alt="VectorRight"
+          layout
+        />
       </SRegistrationSvgs>
     </SRegistrationMainDiv>
   );
