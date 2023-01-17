@@ -1,6 +1,6 @@
 import React from "react";
 import { SCheckWrapper, SContainer, SInput, SInputWrapper, SLabel } from "./Checkbox.styled";
-import { Check } from "../Check/Check";
+import { Check } from "./Check";
 
 export const Checkbox = ({ id, label, name, isChecked, onChange }) => {
   return (

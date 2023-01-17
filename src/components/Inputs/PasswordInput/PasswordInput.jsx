@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { Eye } from "../Eye";
+import { Eye } from "./Eye";
 import { Input } from "../Input";
 
 export const PasswordInput = ({

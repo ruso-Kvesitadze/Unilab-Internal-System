@@ -1,10 +1,13 @@
 import React, { useState } from "react";
 import { SecondHeader } from "../../components/SecondHeader";
-import { PhoneNumberInput } from "../../components/PhoneNumberInput";
-import { Dropdown } from "../../components/Dropdown";
-import { CountryDropdown } from "../../components/CountryDropdown/CountryDropdown";
-import { Input } from "../../components/Input";
-import { Checkbox } from "../../components/Checkbox/Checkbox";
+import { PhoneNumberInput } from "../../components/Inputs/PhoneNumberInput";
+import { Dropdown } from "../../components/Inputs/Dropdown";
+import { CountryDropdown } from "../../components/Inputs/CountryDropdown";
+import { Input } from "../../components/Inputs/Input";
+import { Checkbox } from "../../components/Inputs/Checkbox/Checkbox";
+import { PasswordInput } from "../../components/Inputs/PasswordInput";
+import { NumberInput } from "../../components/Inputs/NumberInput";
+import { DateInput } from "../../components/Inputs/DateInput";
 import { Button } from "../../components/Button";
 import { AdditionalInfoSchool } from "../../components/AdditionalInformation/AdditionalInfoSchool";
 import { AdditionalInfoUniversity } from "../../components/AdditionalInformation/AdditionalInfoUniversity";
@@ -27,9 +30,6 @@ import {
 } from "./Registration.styled";
 import { motion } from "framer-motion";
 
-import { PasswordInput } from "../../components/PasswordInput";
-import { NumberInput } from "../../components/NumberInput";
-import { DateInput } from "../../components/DateInput";
 import dayjs from "dayjs";
 import { Link } from "react-router-dom";
 export const Registration = () => {
@@ -110,7 +110,7 @@ export const Registration = () => {
             name="password"
             label="პაროლი"
             width="18.75rem"
-            placeholder="***************"
+            placeholder="●●●●●●●●"
             value={password}
             onChange={(e) => {
               setPassword(e.target.value);
@@ -121,7 +121,7 @@ export const Registration = () => {
             name="confirmPassword"
             label="პაროლი განმეორებით"
             width="18.75rem"
-            placeholder="***************"
+            placeholder="●●●●●●●●"
             value={confirmPassword}
             onChange={(e) => {
               setConfirmPassword(e.target.value);

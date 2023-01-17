@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { Header } from "../../components/Header";
-import { Input } from "../../components/Input";
+import { Input } from "../../components/Inputs/Input";
 import { Button } from "../../components/Button";
 
 import {
@@ -43,11 +43,11 @@ export const RecoveryPassword = () => {
       </SForm>
       <SAuthenticationSvgs>
         <SVektorRecoveryRight
-          src="./public/assets/svg/vektorRecoveryRight.svg"
+          src="/assets/svg/vektorRecoveryRight.svg"
           alt="vector"
         />
         <SStarRecoveryBottom
-          src="./public/assets/svg/StarRecoveryBottom.svg"
+          src="/assets/svg/StarRecoveryBottom.svg"
           alt="starTop"
         />
       </SAuthenticationSvgs>

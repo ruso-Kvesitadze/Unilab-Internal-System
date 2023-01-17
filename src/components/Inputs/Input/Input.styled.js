@@ -50,6 +50,10 @@ export const SInput = styled.input`
     transition: background-color 600000s ease-in-out 0s;
   }
 
+  &:autofill {
+    background: transparent;
+  }
+
   &::-ms-reveal {
     display: none;
   }

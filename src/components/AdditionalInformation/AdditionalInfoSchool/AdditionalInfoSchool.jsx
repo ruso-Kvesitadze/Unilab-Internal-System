@@ -1,7 +1,7 @@
 import React, { useState } from "react";
-import { PhoneNumberInput } from "../../PhoneNumberInput";
-import { Input } from "../../Input";
-import { Dropdown } from "../../Dropdown";
+import { PhoneNumberInput } from "../../Inputs/PhoneNumberInput";
+import { Input } from "../../Inputs/Input";
+import { Dropdown } from "../../Inputs/Dropdown";
 import {
   SAdditionalInformationText,
   SAdditionalInfoSchool,
