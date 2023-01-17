@@ -6,6 +6,7 @@ import { pathVariants } from "./Eye.variants";
 export const Eye = ({ isPasswordVisible, onClick }) => {
   return (
     <SButton
+      title="toggle password visibility"
       type="button"
       onClick={onClick}
       initial={"hidden"}

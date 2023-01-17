@@ -1,11 +1,11 @@
 import React from "react";
 import { SHeader } from "./Header.styled";
-import { HeaderIcons } from "./HeaderIcons";
+import { IconPair } from "../IconPair";
 
 export const Header = () => {
   return (
     <SHeader>
-      <HeaderIcons />
+      <IconPair size="6.25rem" gap="2.875rem"/>
     </SHeader>
   );
 };

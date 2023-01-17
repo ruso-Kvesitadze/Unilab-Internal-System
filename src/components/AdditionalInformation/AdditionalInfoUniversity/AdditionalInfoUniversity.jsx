@@ -79,6 +79,7 @@ export const AdditionalInfoUniversity = () => {
             />
           </SRadioWrapper>
           <Dropdown
+            id="semester"
             label="სემესტრი"
             width="5.5rem"
             placeholder=""

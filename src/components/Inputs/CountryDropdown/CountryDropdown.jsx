@@ -26,11 +26,11 @@ export const CountryDropdown = ({
       fontWeight={fontWeight}
       placeholder={placeholder}
       items={items}
-      onSelect={onSelect} 
+      onSelect={onSelect}
       selected={selected}
       LeftComponent={
         <SCountryIconContainer>
-          <SIcon src={icons[selected]} />
+          <SIcon src={icons[selected]} alt="country flag" />
         </SCountryIconContainer>
       }
     />

@@ -35,6 +35,7 @@ export const AdditionalInfoSchool = () => {
             }}
           />
           <Dropdown
+          id="class"
             label="კლასი"
             width="5.5rem"
             gridArea="auto / 2 / auto / 4"
@@ -83,6 +84,7 @@ export const AdditionalInfoSchool = () => {
             }}
           />
           <PhoneNumberInput
+            id="parentPhoneNumber"
             label="მობილურის ნომერი"
             width="18.75rem"
             fontSize="1rem"

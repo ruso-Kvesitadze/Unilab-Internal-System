@@ -128,6 +128,7 @@ export const Registration = () => {
             }}
           />
           <PhoneNumberInput
+            id="phoneNumber"
             label="მობილურის ნომერი"
             width="18.75rem"
             fontSize="1rem"
@@ -136,6 +137,7 @@ export const Registration = () => {
             onChange={(e) => setPhoneNumber(e.target.value)}
           />
           <DateInput
+            id="dateOfBirth"
             label={"დაბადების თარიღი"}
             width="18.75rem"
             maxDate={dayjs().subtract(18, "year")}
@@ -147,6 +149,7 @@ export const Registration = () => {
             }}
           />
           <Dropdown
+            id="gender"
             label="სქესი"
             width="10rem"
             placeholder="-"
@@ -157,6 +160,7 @@ export const Registration = () => {
             items={["მდედრობითი", "მამრობითი", "სხვა"]}
           />
           <CountryDropdown
+            id="country"
             label="ქვეყანა"
             width="18.75rem"
             selected={country}
@@ -172,6 +176,7 @@ export const Registration = () => {
             }}
           />
           <Dropdown
+            id="region"
             label="რეგიონი"
             width="18.75rem"
             placeholder="აირჩიეთ რეგიონი"
@@ -182,6 +187,7 @@ export const Registration = () => {
             items={["1", "2", "3"]}
           />
           <Dropdown
+            id="city"
             label="ქალაქი"
             width="18.75rem"
             placeholder="აირჩიეთ ქალაქი"
@@ -192,6 +198,7 @@ export const Registration = () => {
             items={["1", "2", "3"]}
           />
           <Input
+            id="fullAdress"
             type="text"
             name="fullAdress"
             label="სრული მისამართი, ქუჩა, ნომერი, შენობა"
@@ -204,6 +211,7 @@ export const Registration = () => {
             }}
           />
           <Dropdown
+            id="status"
             label="სტატუსი"
             width="18.75rem"
             gridArea="auto / 1 / auto / 4"

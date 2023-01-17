@@ -22,19 +22,19 @@ export const STitle = styled.h3`
 `;
 
 export const SPreRegistrationSection = styled.section`
-  h5 {
+  h4 {
     text-align: center;
-    font-size:1.25rem; 
-    margin-bottom:2.125rem;
-}
+    font-size: 1.25rem;
+    margin-bottom: 2.125rem;
+  }
   ul {
     margin-bottom: 5.5rem;
     li {
-        margin: 0rem 5rem; 
-        max-width: 80rem;  
-        font-size: 1rem;
-        weight: 400; 
-        margin-bottom: 1.875rem;
+      margin: 0rem 5rem;
+      max-width: 80rem;
+      font-size: 1rem;
+      weight: 400;
+      margin-bottom: 1.875rem;
     }
   }
 `;

@@ -24,4 +24,5 @@ export const SCalendarIconContainer = styled.div`
 `;
 export const SCalendarIcon = styled.img`
   height: 1.4rem;
+  width: 1.4rem;
 `;

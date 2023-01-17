@@ -9,25 +9,25 @@ export const SFooterTopLines = styled.div`
   display: flex;
   justify-content: space-between;
   img {
-    max-width: 45%;
+    max-width: 40%;
+    width: 35.625rem;
+    height: 1.25rem;
   }
 `;
 
 export const SFooterInfo = styled.div`
-  display: flex;
-  justify-content: space-between;
-  height: 23.813rem;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  justify-items: center;
+  height: 23.8rem;
   align-items: center;
+  padding: 2.8rem;
 `;
-export const SCompanyLogo = styled.div`
-  display: flex;
-  justify-content: flex-start;
-  margin-left: 2.8rem;
-  width: 13rem;
-  img {
-    margin-left: 1.7rem;
-  }
+
+export const SIconPairWrapper = styled.div`
+  width: 100%;
 `;
+
 export const SAboutProjectDiv = styled.div`
   display: flex;
   flex-direction: column;
@@ -35,12 +35,22 @@ export const SAboutProjectDiv = styled.div`
   align-items: center;
   width: 16rem;
   height: 100%;
+
+  img {
+    width: 10.625rem;
+    height: 5rem;
+  }
 `;
 
 export const SAboutProjectContainer = styled.a`
   display: flex;
   cursor: pointer;
+  text-decoration: none;
+  font-weight: 700;
+  font-size: 1.125rem;
+  color: #fff;
 `;
+
 export const SAboutProject = styled.div`
   text-align: center;
   width: 15.688rem;
@@ -63,12 +73,14 @@ export const SAboutProject = styled.div`
 
 export const SSocialIcons = styled.div`
   display: flex;
-  justify-content: space-between;
-  width: 13rem;
-  margin-right: 2.8rem;
+  width: 100%;
+  justify-content: flex-end;
+  gap: 2.3rem;
   a {
     img {
       border-radius: 50%;
+      width: 2.75rem;
+      height: 2.75rem;
     }
   }
 `;

@@ -44,7 +44,7 @@ export const Dropdown = ({
           setIsOpen(!isOpen);
         }}
         RightComponent={
-          <SArrowButton>
+          <SArrowButton title="toggle dropdown">
             <DropArrow isOpen={isOpen} />
           </SArrowButton>
         }

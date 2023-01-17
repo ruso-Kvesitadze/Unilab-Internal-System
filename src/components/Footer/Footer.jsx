@@ -1,10 +1,10 @@
 import React from "react";
-import { HeaderIcons } from "../Header/HeaderIcons";
+import { IconPair } from "../IconPair";
 import {
   SFooter,
   SFooterInfo,
   SFooterTopLines,
-  SCompanyLogo,
+  SIconPairWrapper,
   SAboutProjectDiv,
   SAboutProject,
   SSocialIcons,
@@ -19,23 +19,23 @@ export const Footer = () => {
         <img src="/assets/svg/lineRight.svg" alt="lineRight" />
       </SFooterTopLines>
       <SFooterInfo>
-        <SCompanyLogo>
-          <HeaderIcons width="auto" height="3.563rem" />
-        </SCompanyLogo>
+        <SIconPairWrapper>
+          <IconPair size="3.75rem" gap="1.65rem" />
+        </SIconPairWrapper>
         <SAboutProjectDiv>
-          <SAboutProjectContainer>
+          <SAboutProjectContainer href="#">
             <SAboutProject>პროექტის შესახებ</SAboutProject>
           </SAboutProjectContainer>
           <img src="/assets/png/unilabText.png" alt="unilabText" />
         </SAboutProjectDiv>
         <SSocialIcons>
-          <a href="">
+          <a href="#">
             <img src="/assets/svg/facebookLogo.svg" alt="facebookLogo" />
           </a>
-          <a href="">
+          <a href="#">
             <img src="/assets/svg/youtubeLogo.svg" alt="youtubeLogo" />
           </a>
-          <a href="">
+          <a href="#">
             <img src="/assets/svg/linkedinLogo.svg" alt="linkedinLogo" />
           </a>
         </SSocialIcons>
