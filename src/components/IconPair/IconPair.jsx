@@ -1,11 +1,11 @@
 import React from "react";
 import { SIconPair } from "./IconPair.styled";
 
-export const IconPair = ({ size, gap, margin }) => {
+export const IconPair = ({ width, height, gap, margin }) => {
   return (
-    <SIconPair size={size} gap={gap} margin={margin}>
-      <img src="assets/svg/unilab.svg" alt="unilab" />
-      <img src="assets/png/iliaUniLogo.png" alt="iliaUniLogo" />
+    <SIconPair width={width} height={height} gap={gap} margin={margin}>
+      <img src="assets/png/unilab.png" alt="unilab" />
+      <img src="assets/svg/iliaUniLogo.svg" alt="iliaUniLogo" />
     </SIconPair>
   );
 };

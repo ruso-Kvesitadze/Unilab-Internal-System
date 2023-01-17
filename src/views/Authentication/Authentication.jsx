@@ -29,7 +29,7 @@ export const Authentication = () => {
     <SAuthenticationView>
       <Header />
       <SForm>
-        <STitle>გამარჯობა 👋</STitle>
+        <STitle>გამარჯობა</STitle>
         <SDescription>
           უნილაბის სამართავ პანელში მოსახვედრად, გთხოვთ გაიაროთ ავტორიზაცია
         </SDescription>

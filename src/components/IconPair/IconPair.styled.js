@@ -6,7 +6,7 @@ export const SIconPair = styled.div`
   margin: ${({ margin }) => (margin ? margin : "0")};
 
   img {
-    width: ${({ size }) => size};
-    height: ${({ size }) => size};
+    width: ${({ width }) => width};
+    height: ${({ height }) => height};
   }
 `;
