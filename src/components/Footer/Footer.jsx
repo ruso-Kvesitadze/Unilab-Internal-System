@@ -20,7 +20,7 @@ export const Footer = () => {
       </SFooterTopLines>
       <SFooterInfo>
         <SIconPairWrapper>
-          <IconPair size="3.75rem" gap="1.65rem" />
+          <IconPair width="auto" height="3.75rem" size="" gap="1.65rem" />
         </SIconPairWrapper>
         <SAboutProjectDiv>
           <SAboutProjectContainer href="#">

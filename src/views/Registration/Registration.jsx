@@ -52,7 +52,7 @@ export const Registration = () => {
   return (
     <SRegistrationMainDiv>
       <SecondHeader />
-      <STitle>გამარჯობა 👋</STitle>
+      <STitle>გამარჯობა</STitle>
       <SDescription>
         უნილაბის სამართავ პანელში მოსახვედრად, გთხოვთ გაიაროთ ავტორიზაცია
       </SDescription>
@@ -276,7 +276,9 @@ export const Registration = () => {
         </Button>
         <SAuthenticationText>
           უკვე გაქვს ანგარიში?
-          <SAuthenticationLink to="/">გაიარე ავტორიზაცია</SAuthenticationLink>
+          <SAuthenticationLink to="/authentication">
+            გაიარე ავტორიზაცია
+          </SAuthenticationLink>
         </SAuthenticationText>
       </ScenterDiv>
       <SRegistrationSvgs>
