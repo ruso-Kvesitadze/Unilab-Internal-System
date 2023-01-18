@@ -19,11 +19,11 @@ export const ThirdHeader = () => {
         <IconPair width="auto" height="5rem" gap="2.5rem" />
       </SIconPairPart>
       <SHomePart>
-        <SHomePartIcon src="assets/svg/home.svg" />
+        <SHomePartIcon src="assets/svg/home.svg" alt="home" />
         <SHomePartTitle>უნილაბის შიდა სისტემა</SHomePartTitle>
       </SHomePart>
       <SRegistrationPart>
-        <SRegistrationPartIcon />
+        <SRegistrationPartIcon alt="login"/>
         <Link to="/registration">
           <Button width="12rem">რეგისტრაცია</Button>
         </Link>

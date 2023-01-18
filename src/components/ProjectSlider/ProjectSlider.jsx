@@ -2,10 +2,10 @@ import React, { Component } from "react";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import Slider from "react-slick";
-import { ProjecData } from "../../data";
+import { ProjectData } from "../../data";
 import { SProjectDiv, SProjectCard, SProjectImg } from "./ProjectSlider.Styled";
 
-export const ProjectSlider = () => {
+export const ProjectSlider = ({ onChange }) => {
   const settings = {
     dots: true,
     infinite: true,
@@ -14,6 +14,9 @@ export const ProjectSlider = () => {
     slidesToScroll: 1,
     initialSlide: 0,
     arrows: false,
+    beforeChange: (_oldIndex, newIndex) => {
+      onChange(newIndex);
+    },
     responsive: [
       {
         breakpoint: 1024,
@@ -45,7 +48,7 @@ export const ProjectSlider = () => {
   return (
     <SProjectDiv>
       <Slider {...settings}>
-        {ProjecData.map((item) => (
+        {ProjectData.map((item) => (
           <SProjectCard key={item.id}>
             <SProjectImg src={item.src} alt={item.id} />
           </SProjectCard>
