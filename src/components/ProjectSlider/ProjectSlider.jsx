@@ -1,4 +1,4 @@
-import React, { Component } from "react";
+import React, { useEffect } from "react";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import Slider from "react-slick";
@@ -48,9 +48,9 @@ export const ProjectSlider = ({ onChange }) => {
   return (
     <SProjectDiv>
       <Slider {...settings}>
-        {ProjectData.map((item) => (
-          <SProjectCard key={item.id}>
-            <SProjectImg src={item.src} alt={item.id} />
+        {ProjectData.map(({ id, src }) => (
+          <SProjectCard key={id}>
+            <SProjectImg src={src} alt={"banner" + id} />
           </SProjectCard>
         ))}
       </Slider>

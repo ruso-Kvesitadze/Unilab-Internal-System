@@ -23,7 +23,7 @@ export const ThirdHeader = () => {
         <SHomePartTitle>უნილაბის შიდა სისტემა</SHomePartTitle>
       </SHomePart>
       <SRegistrationPart>
-        <SRegistrationPartIcon alt="login"/>
+        <SRegistrationPartIcon src="assets/svg/log-in.svg" alt="login" />
         <Link to="/registration">
           <Button width="12rem">რეგისტრაცია</Button>
         </Link>

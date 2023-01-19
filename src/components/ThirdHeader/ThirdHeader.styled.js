@@ -41,8 +41,6 @@ export const SRegistrationPart = styled.div`
 
 export const SRegistrationPartIcon = styled.img`
   cursor: pointer;
+  width: 1.5rem;
+  height: 1.5rem;
 `;
-
-SRegistrationPartIcon.defaultProps = {
-  src: "assets/svg/log-in.svg",
-};
