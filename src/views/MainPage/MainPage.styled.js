@@ -33,6 +33,7 @@ export const SMainPageSvgs = styled.div`
 export const SStarLeftTop = styled.img`
   position: absolute;
   top: 17rem;
+  z-index: -1;
 `;
 export const SStarRight = styled.img`
   position: absolute;
