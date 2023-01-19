@@ -1,7 +1,8 @@
 import styled from "styled-components";
 import { Link } from "react-router-dom";
+import { motion } from "framer-motion";
 
-export const SRegistrationMainDiv = styled.div`
+export const SRegistrationMainDiv = styled(motion.div)`
   display: flex;
   flex-direction: column;
   align-item: center;
@@ -56,10 +57,13 @@ export const SPrivacyCheckbox = styled.div`
 export const SPrivacyCheckboxImg = styled.img`
   margin-left: 0.75rem;
   cursor: pointer;
+  width: 1.5rem;
+  height: 1.5rem;
 `;
 
-export const SBorderBottom = styled.div`
-  border-bottom: 1px solid #ececec;
+export const SDivisor = styled(motion.div)`
+  height: 1px;
+  background-color: #ffffff;
   grid-area: auto / 1 / auto / 4;
 `;
 
@@ -67,23 +71,20 @@ export const SAdditionalInformationText = styled.p`
   grid-area: auto / 2 / auto / 4;
 `;
 export const SRegistrationSvgs = styled.div`
-  width: 100%;
-  height: 100%;
-  position: absolute;
   z-index: -1;
 `;
 
-export const SStarLeftTop = styled.img`
+export const SStarLeftTop = styled(motion.img)`
   position: absolute;
   left: 4.8rem;
   top 15rem;
 `;
-export const SStarLeftBottom = styled.img`
+export const SStarLeftBottom = styled(motion.img)`
   position: absolute;
   left: 3rem;
   bottom: 0rem;
 `;
-export const SVectorRight = styled.img`
+export const SVectorRight = styled(motion.img)`
   position: absolute;
   right: 0rem;
   bottom: 0rem;

@@ -16,9 +16,9 @@ export const PrivacyPolicy = () => {
     <SPrivacyPolicyView>
       <SecondHeader />
       <SPrivacyPolicy>
-        <STitle>გამარჯობა 👋</STitle>
+        <STitle>გამარჯობა</STitle>
         <SPreRegistrationSection>
-          <h5>გთხოვთ, გაეცნოთ საიტის მოხმარების წესებსა და პირობებს</h5>
+          <h4>გთხოვთ, გაეცნოთ საიტის მოხმარების წესებსა და პირობებს</h4>
           <ul>
             <li>
               ოდესმე გიფიქრია პატარა ოთახზე, რომელში შესვლისას დროსა და სივრცეში
@@ -42,7 +42,7 @@ export const PrivacyPolicy = () => {
           </ul>
         </SPreRegistrationSection>
         <SPreRegistrationSection>
-          <h5>გთხოვთ, გაეცნოთ საიტის მოხმარების წესებსა და პირობებს</h5>
+          <h4>გთხოვთ, გაეცნოთ საიტის მოხმარების წესებსა და პირობებს</h4>
           <ul>
             <li>
               ოდესმე გიფიქრია პატარა ოთახზე, რომელში შესვლისას დროსა და სივრცეში

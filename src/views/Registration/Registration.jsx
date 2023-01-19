@@ -1,10 +1,13 @@
 import React, { useState } from "react";
 import { SecondHeader } from "../../components/SecondHeader";
-import { PhoneNumberInput } from "../../components/PhoneNumberInput";
-import { Dropdown } from "../../components/Dropdown";
-import { CountryDropdown } from "../../components/CountryDropdown/CountryDropdown";
-import { Input } from "../../components/Input";
-import { Checkbox } from "../../components/Checkbox/Checkbox";
+import { PhoneNumberInput } from "../../components/Inputs/PhoneNumberInput";
+import { Dropdown } from "../../components/Inputs/Dropdown";
+import { CountryDropdown } from "../../components/Inputs/CountryDropdown";
+import { Input } from "../../components/Inputs/Input";
+import { Checkbox } from "../../components/Inputs/Checkbox/Checkbox";
+import { PasswordInput } from "../../components/Inputs/PasswordInput";
+import { NumberInput } from "../../components/Inputs/NumberInput";
+import { DateInput } from "../../components/Inputs/DateInput";
 import { Button } from "../../components/Button";
 import { AdditionalInfoSchool } from "../../components/AdditionalInformation/AdditionalInfoSchool";
 import { AdditionalInfoUniversity } from "../../components/AdditionalInformation/AdditionalInfoUniversity";
@@ -19,15 +22,14 @@ import {
   ScenterDiv,
   SPrivacyCheckbox,
   SPrivacyCheckboxImg,
-  SBorderBottom,
+  SDivisor,
   SRegistrationSvgs,
   SStarLeftTop,
   SStarLeftBottom,
   SVectorRight,
 } from "./Registration.styled";
-import { PasswordInput } from "../../components/PasswordInput";
-import { NumberInput } from "../../components/NumberInput";
-import { DateInput } from "../../components/DateInput";
+import { motion } from "framer-motion";
+
 import dayjs from "dayjs";
 import { Link } from "react-router-dom";
 export const Registration = () => {
@@ -50,7 +52,7 @@ export const Registration = () => {
   return (
     <SRegistrationMainDiv>
       <SecondHeader />
-      <STitle>გამარჯობა 👋</STitle>
+      <STitle>გამარჯობა</STitle>
       <SDescription>
         უნილაბის სამართავ პანელში მოსახვედრად, გთხოვთ გაიაროთ ავტორიზაცია
       </SDescription>
@@ -108,7 +110,7 @@ export const Registration = () => {
             name="password"
             label="პაროლი"
             width="18.75rem"
-            placeholder="***************"
+            placeholder="●●●●●●●●"
             value={password}
             onChange={(e) => {
               setPassword(e.target.value);
@@ -119,13 +121,14 @@ export const Registration = () => {
             name="confirmPassword"
             label="პაროლი განმეორებით"
             width="18.75rem"
-            placeholder="***************"
+            placeholder="●●●●●●●●"
             value={confirmPassword}
             onChange={(e) => {
               setConfirmPassword(e.target.value);
             }}
           />
           <PhoneNumberInput
+            id="phoneNumber"
             label="მობილურის ნომერი"
             width="18.75rem"
             fontSize="1rem"
@@ -134,10 +137,10 @@ export const Registration = () => {
             onChange={(e) => setPhoneNumber(e.target.value)}
           />
           <DateInput
+            id="dateOfBirth"
             label={"დაბადების თარიღი"}
             width="18.75rem"
-            maxDate={dayjs().subtract(18, "year")}
-            defaultDate={dayjs().subtract(18, "year")}
+            defaultDate={dayjs()}
             placeholder="15.10.2022"
             selectedDate={dateOfBirth?.format("DD.MM.YYYY")}
             onSelect={(date) => {
@@ -145,6 +148,7 @@ export const Registration = () => {
             }}
           />
           <Dropdown
+            id="gender"
             label="სქესი"
             width="10rem"
             placeholder="-"
@@ -155,6 +159,7 @@ export const Registration = () => {
             items={["მდედრობითი", "მამრობითი", "სხვა"]}
           />
           <CountryDropdown
+            id="country"
             label="ქვეყანა"
             width="18.75rem"
             selected={country}
@@ -170,6 +175,7 @@ export const Registration = () => {
             }}
           />
           <Dropdown
+            id="region"
             label="რეგიონი"
             width="18.75rem"
             placeholder="აირჩიეთ რეგიონი"
@@ -180,6 +186,7 @@ export const Registration = () => {
             items={["1", "2", "3"]}
           />
           <Dropdown
+            id="city"
             label="ქალაქი"
             width="18.75rem"
             placeholder="აირჩიეთ ქალაქი"
@@ -190,6 +197,7 @@ export const Registration = () => {
             items={["1", "2", "3"]}
           />
           <Input
+            id="fullAdress"
             type="text"
             name="fullAdress"
             label="სრული მისამართი, ქუჩა, ნომერი, შენობა"
@@ -202,6 +210,7 @@ export const Registration = () => {
             }}
           />
           <Dropdown
+            id="status"
             label="სტატუსი"
             width="18.75rem"
             gridArea="auto / 1 / auto / 4"
@@ -214,12 +223,34 @@ export const Registration = () => {
           />
 
           {status === "მოსწავლე" || status === "სტუდენტი" ? (
-            <SBorderBottom></SBorderBottom>
+            <SDivisor
+              initial={{ width: 0 }}
+              animate={{ width: "100%" }}
+              transition={{ duration: 0.5 }}
+            />
           ) : null}
         </SGridContainer>
       </SContainer>
-      {status == "მოსწავლე" && <AdditionalInfoSchool />}
-      {status == "სტუდენტი" && <AdditionalInfoUniversity />}
+
+      {status == "მოსწავლე" && (
+        <motion.div
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{ duration: 0.5 }}
+        >
+          <AdditionalInfoSchool />
+        </motion.div>
+      )}
+      {status == "სტუდენტი" && (
+        <motion.div
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{ duration: 0.5 }}
+        >
+          <AdditionalInfoUniversity />
+        </motion.div>
+      )}
+
       <ScenterDiv>
         <SPrivacyCheckbox>
           <Checkbox
@@ -244,7 +275,9 @@ export const Registration = () => {
         </Button>
         <SAuthenticationText>
           უკვე გაქვს ანგარიში?
-          <SAuthenticationLink to="/">გაიარე ავტორიზაცია</SAuthenticationLink>
+          <SAuthenticationLink to="/authentication">
+            გაიარე ავტორიზაცია
+          </SAuthenticationLink>
         </SAuthenticationText>
       </ScenterDiv>
       <SRegistrationSvgs>
@@ -252,8 +285,16 @@ export const Registration = () => {
           src="assets/svg/RStarLeftBottom.svg"
           alt="StarLeftBottom"
         />
-        <SStarLeftBottom src="assets/svg/RStarLeftTop.svg" alt="StarLeftTop" />
-        <SVectorRight src="assets/svg/RVectorRight.svg" alt="VectorRight" />
+        <SStarLeftBottom
+          src="assets/svg/RStarLeftTop.svg"
+          alt="StarLeftTop"
+          layout
+        />
+        <SVectorRight
+          src="assets/svg/RVectorRight.svg"
+          alt="VectorRight"
+          layout
+        />
       </SRegistrationSvgs>
     </SRegistrationMainDiv>
   );

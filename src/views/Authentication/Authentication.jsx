@@ -1,8 +1,8 @@
 import React, { useState } from "react";
 import { Header } from "../../components/Header";
-import { Input } from "../../components/Input";
-import { PasswordInput } from "../../components/PasswordInput";
-import { Checkbox } from "../../components/Checkbox/Checkbox";
+import { Input } from "../../components/Inputs/Input";
+import { PasswordInput } from "../../components/Inputs/PasswordInput";
+import { Checkbox } from "../../components/Inputs/Checkbox/Checkbox";
 import { Button } from "../../components/Button";
 import {
   SAuthenticationView,
@@ -29,7 +29,7 @@ export const Authentication = () => {
     <SAuthenticationView>
       <Header />
       <SForm>
-        <STitle>გამარჯობა 👋</STitle>
+        <STitle>გამარჯობა</STitle>
         <SDescription>
           უნილაბის სამართავ პანელში მოსახვედრად, გთხოვთ გაიაროთ ავტორიზაცია
         </SDescription>
@@ -51,7 +51,7 @@ export const Authentication = () => {
             name="password"
             label="პაროლი"
             width={"21.25rem"}
-            placeholder="***************"
+            placeholder="●●●●●●●●"
             value={password}
             onChange={(e) => {
               setPassword(e.target.value);

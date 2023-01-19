@@ -1,10 +1,10 @@
 import React from "react";
-import { HeaderIcons } from "../Header/HeaderIcons";
+import { IconPair } from "../IconPair";
 import {
   SFooter,
   SFooterInfo,
   SFooterTopLines,
-  SCompanyLogo,
+  SIconPairWrapper,
   SAboutProjectDiv,
   SAboutProject,
   SSocialIcons,
@@ -15,34 +15,28 @@ export const Footer = () => {
   return (
     <SFooter>
       <SFooterTopLines>
-        <img src="./public/assets/svg/lineLeft.svg" alt="lineLeft" />
-        <img src="./public/assets/svg/lineRight.svg" alt="lineRight" />
+        <img src="/assets/svg/lineLeft.svg" alt="lineLeft" />
+        <img src="/assets/svg/lineRight.svg" alt="lineRight" />
       </SFooterTopLines>
       <SFooterInfo>
-        <SCompanyLogo>
-          <HeaderIcons width="auto" height="3.563rem" />
-        </SCompanyLogo>
+        <SIconPairWrapper>
+          <IconPair width="auto" height="3.75rem" size="" gap="1.65rem" />
+        </SIconPairWrapper>
         <SAboutProjectDiv>
-          <SAboutProjectContainer>
+          <SAboutProjectContainer href="#">
             <SAboutProject>პროექტის შესახებ</SAboutProject>
           </SAboutProjectContainer>
-          <img src="./public/assets/png/unilabText.png" alt="unilabText" />
+          <img src="/assets/images/unilabText.webp" alt="unilabText" />
         </SAboutProjectDiv>
         <SSocialIcons>
-          <a href="">
-            <img
-              src="./public/assets/svg/facebookLogo.svg"
-              alt="facebookLogo"
-            />
+          <a href="#">
+            <img src="/assets/svg/facebookLogo.svg" alt="facebookLogo" />
           </a>
-          <a href="">
-            <img src="./public/assets/svg/youtubeLogo.svg" alt="youtubeLogo" />
+          <a href="#">
+            <img src="/assets/svg/youtubeLogo.svg" alt="youtubeLogo" />
           </a>
-          <a href="">
-            <img
-              src="./public/assets/svg/linkedinLogo.svg"
-              alt="linkedinLogo"
-            />
+          <a href="#">
+            <img src="/assets/svg/linkedinLogo.svg" alt="linkedinLogo" />
           </a>
         </SSocialIcons>
       </SFooterInfo>

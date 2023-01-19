@@ -1,7 +1,7 @@
 import React, { useState } from "react";
-import { Input } from "../../Input";
-import { Dropdown } from "../../Dropdown";
-import { RadioInput } from "../../RadioInput";
+import { Input } from "../../Inputs/Input";
+import { Dropdown } from "../../Inputs/Dropdown";
+import { RadioInput } from "../../Inputs/RadioInput";
 
 import {
   SAdditionalInfoUniversity,
@@ -79,6 +79,7 @@ export const AdditionalInfoUniversity = () => {
             />
           </SRadioWrapper>
           <Dropdown
+            id="semester"
             label="სემესტრი"
             width="5.5rem"
             placeholder=""
