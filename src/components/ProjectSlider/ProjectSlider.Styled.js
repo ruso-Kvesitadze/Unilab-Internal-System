@@ -12,8 +12,6 @@ export const SProjectDiv = styled.div`
 
 export const SProjectCard = styled.div`
   margin-bottom: 2.6rem;
-  width: 1240px;
-  height: 450px;
   outline: 0;
   outline: none;
 `;
@@ -21,6 +19,5 @@ export const SProjectCard = styled.div`
 export const SProjectImg = styled.img`
   width: 1240px;
   height: 450px;
-  width: auto;
   margin: 0 auto;
 `;

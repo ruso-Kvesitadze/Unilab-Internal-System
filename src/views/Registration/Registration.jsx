@@ -140,8 +140,7 @@ export const Registration = () => {
             id="dateOfBirth"
             label={"დაბადების თარიღი"}
             width="18.75rem"
-            maxDate={dayjs().subtract(18, "year")}
-            defaultDate={dayjs().subtract(18, "year")}
+            defaultDate={dayjs()}
             placeholder="15.10.2022"
             selectedDate={dateOfBirth?.format("DD.MM.YYYY")}
             onSelect={(date) => {
