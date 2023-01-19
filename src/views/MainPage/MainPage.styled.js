@@ -17,13 +17,14 @@ export const SMainContent = styled(motion.div)`
 export const STitle = styled(motion.h4)`
   font-size: 1.75rem;
   font-weight: 700;
+  margin-bottom: 1.5rem;
 `;
 
 export const SDescription = styled(motion.p)`
   font-size: 1.25rem;
   line-height: 1.7rem;
   white-space: pre-line;
-  max-width: 1366px;
+  max-width: 1240px;
   margin-bottom: 5.5rem;
 `;
 

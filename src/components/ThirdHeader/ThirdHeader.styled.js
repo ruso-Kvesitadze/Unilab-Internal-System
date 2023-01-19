@@ -33,9 +33,10 @@ export const SHomePartIcon = styled.img`
 `;
 
 export const SRegistrationPart = styled.div`
-  width: 100%;
-  justify-content: flex-end;
   display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  width: 100%;
   gap: 2rem;
 `;
 
