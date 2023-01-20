@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useRef } from "react";
 import { Input } from "../Input";
 import DatePicker from "uni-date-picker";
 import { Button } from "../../Button";
@@ -10,6 +10,7 @@ import {
   SCalendarIcon,
 } from "./DateInput.styled";
 import { datePickerVariants } from "./DateInput.variants";
+import { useAutoClose } from "../../../hooks/useAutoClose";
 
 export const DateInput = ({
   id,
@@ -25,14 +26,16 @@ export const DateInput = ({
   onSelect,
   RightComponent,
 }) => {
-  const [isOpen, setIsOpen] = useState(false);
+  const DateInputRef = useRef(null);
+  const [isOpen, setIsOpen] = useAutoClose(DateInputRef, false);
 
   const handleSubmit = (date) => {
     setIsOpen(false);
     onSelect(date);
   };
+
   return (
-    <SDateInputWrapper>
+    <SDateInputWrapper ref={DateInputRef}>
       <Input
         id={id}
         type={"text"}
