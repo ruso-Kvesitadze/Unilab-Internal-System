@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useRef } from "react";
 import { Input } from "../Input";
 import {
   SArrowButton,
@@ -10,6 +10,7 @@ import {
 import { DropArrow } from "./DropArrow";
 import { dropdownVariants } from "./Dropdown.variants";
 import { getLongestString } from "../../../utils/dropdown";
+import { useAutoClose } from "../../../hooks/useAutoClose";
 
 export const Dropdown = ({
   id,
@@ -25,10 +26,11 @@ export const Dropdown = ({
   onSelect,
   LeftComponent,
 }) => {
-  const [isOpen, setIsOpen] = useState(false);
+  const DropdownRef = useRef(null);
+  const [isOpen, setIsOpen] = useAutoClose(DropdownRef, false);
 
   return (
-    <SDropdownWrapper gridArea={gridArea}>
+    <SDropdownWrapper gridArea={gridArea} ref={DropdownRef}>
       <Input
         id={id}
         type={"text"}
