@@ -47,5 +47,5 @@ export const SVektorRecoveryRight = styled.img`
 export const SStarRecoveryBottom = styled.img`
   position: absolute;
   left: 6.25rem;
-  bottom: 2.625rem; ;
+  top: 45rem;
 `;

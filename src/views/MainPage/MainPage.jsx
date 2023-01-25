@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { ThirdHeader } from "../../components/ThirdHeader";
+import { ThirdHeader } from "../../components/Headers/ThirdHeader";
 import { ProjectSlider } from "../../components/ProjectSlider";
 import { Footer } from "../../components/Footer";
 import { Button } from "../../components/Button";

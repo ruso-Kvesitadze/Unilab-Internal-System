@@ -1,9 +1,10 @@
 import React from "react";
+import { FourthHeader } from "../../components/Headers/FourthHeader";
 
 export const StudentListPage = () => {
   return (
     <div>
-      <h1>StudentListPage</h1>
+      <FourthHeader />
     </div>
   );
 };

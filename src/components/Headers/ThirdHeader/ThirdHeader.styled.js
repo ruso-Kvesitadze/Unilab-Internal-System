@@ -1,6 +1,6 @@
 import styled from "styled-components";
 
-export const SThirdHeader = styled.div`
+export const SThirdHeader = styled.header`
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
   justify-items: center;

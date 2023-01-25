@@ -5,5 +5,5 @@ export const SHeader = styled.header`
   justify-content: center;
   align-items: flex-end;
   width: 100%;
-  height: 10.5rem;
+  min-height: 10.5rem;
 `;

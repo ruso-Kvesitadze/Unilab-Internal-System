@@ -1,6 +1,6 @@
 import React from "react";
 import { Footer } from "../../components/Footer";
-import { SecondHeader } from "../../components/SecondHeader";
+import { SecondHeader } from "../../components/Headers/SecondHeader";
 import {
   SPrivacyPolicyView,
   SPrivacyPolicy,
