@@ -1,6 +1,6 @@
 import React from "react";
 import { SHeader } from "./Header.styled";
-import { IconPair } from "../IconPair";
+import { IconPair } from "../../IconPair";
 
 export const Header = () => {
   return (

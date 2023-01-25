@@ -45,4 +45,5 @@ export const SVectorBottom = styled(motion.img)`
   position: absolute;
   left: 0rem;
   bottom: 12rem;
+  pointer-events: none;
 `;

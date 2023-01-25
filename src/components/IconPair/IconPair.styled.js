@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import styled from "styled-components";
 
 export const SIconPair = styled.div`
@@ -10,3 +11,5 @@ export const SIconPair = styled.div`
     height: ${({ height }) => height};
   }
 `;
+
+export const SUnilabLink = styled(Link)``;

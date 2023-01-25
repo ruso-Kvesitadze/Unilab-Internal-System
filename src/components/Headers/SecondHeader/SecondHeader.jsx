@@ -1,5 +1,5 @@
 import React from "react";
-import { IconPair } from "../IconPair";
+import { IconPair } from "../../IconPair";
 import { SSecondHeader } from "./SecondHeader.styled";
 
 export const SecondHeader = () => {
