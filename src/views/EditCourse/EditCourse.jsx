@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { FourthHeader } from "../../components/Headers/FourthHeader";
+import { SideBar } from "../../components/SideBar";
 import { Footer } from "../../components/Footer";
 import {
   SEditCourseMainDiv,
@@ -41,7 +42,7 @@ export const EditCourse = () => {
             onSelect={(item) => {
               setLecturer(item);
             }}
-            items={["გიორგი", "გიო", "ბექა", "გიორგი"]}
+            items={["გიორგი", "გიო", "ბექა"]}
           ></Dropdown>
           <Dropdown
             id="teachingType"
@@ -52,7 +53,6 @@ export const EditCourse = () => {
             onSelect={(item) => {
               setTeachingType(item);
             }}
-            items={["გიორგი", "გიო", "ბექა", "გიორგი"]}
           ></Dropdown>
         </SGridContainer>
       </SContainer>
@@ -69,6 +69,9 @@ export const EditCourse = () => {
           დამატება
         </Button>
       </SButtonContainer>
+      <section>
+        <SideBar />
+      </section>
       <Footer />
     </SEditCourseMainDiv>
   );
