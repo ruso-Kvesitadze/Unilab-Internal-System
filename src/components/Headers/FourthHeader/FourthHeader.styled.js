@@ -1,6 +1,7 @@
 import styled from "styled-components";
 import { Link } from "react-router-dom";
 import { motion } from "framer-motion";
+
 export const SFourthHeader = styled.header`
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
@@ -19,6 +20,7 @@ export const SHeaderUnilabLogo = styled(Link)`
     height: 3.1rem;
   }
 `;
+
 export const SHeaderProperty = styled.div`
   width: 100%;
   display: flex;
@@ -26,16 +28,19 @@ export const SHeaderProperty = styled.div`
   align-items: center;
   gap: 2.1rem;
 `;
+
 export const SProfileDiv = styled.div`
+  position: relative;
   display: flex;
-  justify-content: center;
   align-items: center;
   width: 6.25rem;
   height: 3.75rem;
+  padding: 0.43rem;
   background-color: #373737;
   border-radius: 1.8rem;
   gap: 0.25rem;
   position: relative;
+  cursor: pointer;
 `;
 
 export const SProfilePicture = styled.img`
@@ -43,21 +48,22 @@ export const SProfilePicture = styled.img`
   height: 3.1rem;
   border-radius: 1.8rem;
 `;
-export const SProfileDropDownBtn = styled.button`
-  text-decoration: none;
+
+export const SProfileChevronWrapper = styled.div`
+  display: flex;
+  align-items: center;
+  margin: 0 auto;
 `;
 
-export const SProfileDropDown = styled.img`
-  width: 1.5rem;
-  height: 1.5rem;
-`;
 export const SLanguageDiv = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
   gap: 0.25rem;
 `;
+
 export const SLanguageText = styled.p``;
+
 export const SLanguageDropDown = styled.img`
   width: 0.625rem;
   height: 0.375rem;
@@ -65,9 +71,12 @@ export const SLanguageDropDown = styled.img`
 
 export const SPopup = styled(motion.div)`
   position: absolute;
-  top: 5rem;
-  right: -7.938rem;
+  left: 75%;
+  transform: translateX(-50%);
+  margin-top: 1.31rem;
+  cursor: auto;
 `;
+
 export const SPopupDiv = styled.div`
   display: flex;
   flex-direction: column;
@@ -114,6 +123,7 @@ export const SUserName = styled.h4`
   font-size: 1rem;
   color: #2984ce;
 `;
+
 export const SUserProperty = styled.div`
   display: flex;
   flex-direction: column;
@@ -125,20 +135,24 @@ export const SUserProperty = styled.div`
 export const SUserBorder = styled.div`
   border: 1px solid #ebebeb;
 `;
+
 export const SMyAccount = styled.div`
   display: flex;
   gap: 1.25rem;
   cursor: pointer;
 `;
+
 export const SMyAccountImg = styled.img`
   width: 1.375rem;
   height: 1.375rem;
 `;
+
 export const SLogOut = styled.div`
   display: flex;
   gap: 1.25rem;
   cursor: pointer;
 `;
+
 export const SLogOutImg = styled.img`
   width: 1.375rem;
   height: 1.375rem;
