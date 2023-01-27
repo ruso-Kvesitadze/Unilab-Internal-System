@@ -7,10 +7,11 @@ import {
   SDropdownList,
   SDropdownWrapper,
 } from "./Dropdown.styled";
-import { DropArrow } from "./DropArrow";
+import { DropArrow } from "../../DropArrow";
 import { dropdownVariants } from "./Dropdown.variants";
 import { getLongestString } from "../../../utils/dropdown";
 import { useAutoClose } from "../../../hooks/useAutoClose";
+import { AnimatePresence } from "framer-motion";
 
 export const Dropdown = ({
   id,
@@ -26,11 +27,11 @@ export const Dropdown = ({
   onSelect,
   LeftComponent,
 }) => {
-  const DropdownRef = useRef(null);
-  const [isOpen, setIsOpen] = useAutoClose(DropdownRef, false);
+  const dropdownRef = useRef(null);
+  const [isOpen, setIsOpen] = useAutoClose(dropdownRef, false);
 
   return (
-    <SDropdownWrapper gridArea={gridArea} ref={DropdownRef}>
+    <SDropdownWrapper gridArea={gridArea} ref={dropdownRef}>
       <Input
         id={id}
         type={"text"}
@@ -52,30 +53,35 @@ export const Dropdown = ({
         }
         LeftComponent={LeftComponent}
       />
-      <SDropdownList
-        variants={dropdownVariants}
-        initial={"hidden"}
-        animate={isOpen ? "visible" : "hidden"}
-        transition={{ duration: 0.4, type: "spring" }}
-      >
-        {items ? (
-          items.map((item) => (
-            <SDropdownItem key={item}>
-              <SDropdownButton
-                onClick={() => {
-                  onSelect(item);
-                  setIsOpen(false);
-                }}
-                data-longestitem={getLongestString(items)}
-              >
-                {item}
-              </SDropdownButton>
-            </SDropdownItem>
-          ))
-        ) : (
-          <span>No items</span>
+      <AnimatePresence>
+        {isOpen && (
+          <SDropdownList
+            variants={dropdownVariants}
+            initial={"hidden"}
+            animate={"visible"}
+            exit={"hidden"}
+            transition={{ duration: 0.4, type: "spring" }}
+          >
+            {items ? (
+              items.map((item) => (
+                <SDropdownItem key={item}>
+                  <SDropdownButton
+                    onClick={() => {
+                      onSelect(item);
+                      setIsOpen(false);
+                    }}
+                    data-longestitem={getLongestString(items)}
+                  >
+                    {item}
+                  </SDropdownButton>
+                </SDropdownItem>
+              ))
+            ) : (
+              <span>No items</span>
+            )}
+          </SDropdownList>
         )}
-      </SDropdownList>
+      </AnimatePresence>
     </SDropdownWrapper>
   );
 };

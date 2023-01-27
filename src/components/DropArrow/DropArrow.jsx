@@ -1,7 +1,7 @@
 import React from "react";
 import { motion } from "framer-motion";
 
-export const DropArrow = ({ isOpen }) => {
+export const DropArrow = ({ isOpen, stroke }) => {
   return (
     <svg
       xmlns="http://www.w3.org/2000/svg"
@@ -9,7 +9,7 @@ export const DropArrow = ({ isOpen }) => {
       height={5}
       viewBox="0 0 10 5"
       fill="none"
-      stroke="#434343"
+      stroke={stroke ? stroke : "#434343"}
       strokeWidth={2}
       strokeLinecap="round"
       strokeLinejoin="round"

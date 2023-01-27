@@ -1,4 +1,4 @@
 export const popupVariants = {
-  hidden: { opacity: 0, transition: { type: "spring", duration: 1 } },
-  visible: { opacity: 1, transition: { type: "spring", duration: 1 } },
+  hidden: { opacity: 0, top: "80%" },
+  visible: { opacity: 1, top: "100%" },
 };

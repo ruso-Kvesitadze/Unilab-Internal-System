@@ -11,6 +11,7 @@ import {
 } from "./DateInput.styled";
 import { datePickerVariants } from "./DateInput.variants";
 import { useAutoClose } from "../../../hooks/useAutoClose";
+import { AnimatePresence } from "framer-motion";
 
 export const DateInput = ({
   id,
@@ -26,8 +27,8 @@ export const DateInput = ({
   onSelect,
   RightComponent,
 }) => {
-  const DateInputRef = useRef(null);
-  const [isOpen, setIsOpen] = useAutoClose(DateInputRef, false);
+  const dateInputRef = useRef(null);
+  const [isOpen, setIsOpen] = useAutoClose(dateInputRef, false);
 
   const handleSubmit = (date) => {
     setIsOpen(false);
@@ -35,7 +36,7 @@ export const DateInput = ({
   };
 
   return (
-    <SDateInputWrapper ref={DateInputRef}>
+    <SDateInputWrapper ref={dateInputRef}>
       <Input
         id={id}
         type={"text"}
@@ -55,20 +56,25 @@ export const DateInput = ({
         }
         RightComponent={RightComponent}
       />
-      <SDatePickerWrapper
-        variants={datePickerVariants}
-        initial={"hidden"}
-        animate={isOpen ? "visible" : "hidden"}
-        transition={{ duration: 0.4, type: "spring" }}
-      >
-        <DatePicker
-          defaultDate={defaultDate}
-          maxDate={maxDate}
-          onSubmit={handleSubmit}
-          locale={dayjs.locale()}
-          submitComponent={<Button>არჩევა</Button>}
-        />
-      </SDatePickerWrapper>
+      <AnimatePresence>
+        {isOpen && (
+          <SDatePickerWrapper
+            variants={datePickerVariants}
+            initial={"hidden"}
+            animate={"visible"}
+            exit={"hidden"}
+            transition={{ duration: 0.4, type: "spring" }}
+          >
+            <DatePicker
+              defaultDate={defaultDate}
+              maxDate={maxDate}
+              onSubmit={handleSubmit}
+              locale={dayjs.locale()}
+              submitComponent={<Button>არჩევა</Button>}
+            />
+          </SDatePickerWrapper>
+        )}
+      </AnimatePresence>
     </SDateInputWrapper>
   );
 };
