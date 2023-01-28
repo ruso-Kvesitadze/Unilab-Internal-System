@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { Header } from "../../components/Header";
+import { Header } from "../../components/Headers/Header";
 import { Input } from "../../components/Inputs/Input";
 import { Button } from "../../components/Button";
 
@@ -39,7 +39,9 @@ export const RecoveryPassword = () => {
           }}
         />
         <SMarginTop></SMarginTop>
-        <Button width="21.25rem">გაგზავნა</Button>
+        <Button margin="0 0 6.25rem" width="21.25rem">
+          გაგზავნა
+        </Button>
       </SForm>
       <SAuthenticationSvgs>
         <SVektorRecoveryRight

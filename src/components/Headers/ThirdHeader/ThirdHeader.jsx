@@ -1,6 +1,6 @@
 import React from "react";
-import { IconPair } from "../IconPair";
-import { Button } from "../Button";
+import { IconPair } from "../../IconPair";
+import { Button } from "../../Button";
 import { Link } from "react-router-dom";
 import {
   SThirdHeader,

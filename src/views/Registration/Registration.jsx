@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { SecondHeader } from "../../components/SecondHeader";
+import { SecondHeader } from "../../components/Headers/SecondHeader";
 import { PhoneNumberInput } from "../../components/Inputs/PhoneNumberInput";
 import { Dropdown } from "../../components/Inputs/Dropdown";
 import { CountryDropdown } from "../../components/Inputs/CountryDropdown";

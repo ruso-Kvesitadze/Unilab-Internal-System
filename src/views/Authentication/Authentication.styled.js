@@ -16,7 +16,8 @@ export const SForm = styled.div`
   flex-direction: column;
   align-items: center;
   max-width: 41.25rem;
-  margin-top: 4.375rem;
+  margin: 4.375rem;
+  margin-bottom: 6.25rem;
 `;
 
 export const STitle = styled.h3`
@@ -57,7 +58,7 @@ export const SForgotPasswordLink = styled(Link)`
 export const SRegistrationText = styled.p`
   font-size: 0.875rem;
   color: #ebebeb;
-  margin-top: 1.75rem;
+  margin: 1.75rem 0 6.25rem;
 `;
 
 export const SRegistrationLink = styled(Link)`
@@ -85,5 +86,5 @@ export const StarTopSvg = styled.img`
 export const StarBottomSvg = styled.img`
   position: absolute;
   left: 12.875rem;
-  bottom: 0rem;
+  top: 50rem;
 `;

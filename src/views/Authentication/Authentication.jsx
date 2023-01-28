@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { Header } from "../../components/Header";
+import { Header } from "../../components/Headers/Header";
 import { Input } from "../../components/Inputs/Input";
 import { PasswordInput } from "../../components/Inputs/PasswordInput";
 import { Checkbox } from "../../components/Inputs/Checkbox/Checkbox";

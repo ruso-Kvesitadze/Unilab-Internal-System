@@ -3,6 +3,7 @@ import styled from "styled-components";
 export const SButton = styled.button`
   width: ${({ width }) => (width ? width : "100%")};
   margin: ${({ margin }) => (margin ? margin : "")};
+  height: ${({ height }) => (height ? height : "")};
   font-size: ${({ fontSize }) => (fontSize ? fontSize : "0.875rem")};
   font-weight: ${({ fontWeight }) => (fontWeight ? fontWeight : "400")};
   padding: 0.75rem;
@@ -12,6 +13,14 @@ export const SButton = styled.button`
   color: ${({ secondary }) => (secondary ? "#000000" : "#ffffff")};
   cursor: pointer;
   &:hover {
-    background-color: #315c8e;
+    background-color: ${({ secondary }) => (secondary ? "#f2f2f2" : "#315c8e")};
   }
+`;
+
+export const SContentWrapper = styled.div`
+  display: flex;
+`;
+
+export const SText = styled.span`
+  width: 100%;
 `;

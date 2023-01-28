@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useRef } from "react";
 import { Input } from "../Input";
 import DatePicker from "uni-date-picker";
 import { Button } from "../../Button";
@@ -10,6 +10,8 @@ import {
   SCalendarIcon,
 } from "./DateInput.styled";
 import { datePickerVariants } from "./DateInput.variants";
+import { useAutoClose } from "../../../hooks/useAutoClose";
+import { AnimatePresence } from "framer-motion";
 
 export const DateInput = ({
   id,
@@ -25,14 +27,16 @@ export const DateInput = ({
   onSelect,
   RightComponent,
 }) => {
-  const [isOpen, setIsOpen] = useState(false);
+  const dateInputRef = useRef(null);
+  const [isOpen, setIsOpen] = useAutoClose(dateInputRef, false);
 
   const handleSubmit = (date) => {
     setIsOpen(false);
     onSelect(date);
   };
+
   return (
-    <SDateInputWrapper>
+    <SDateInputWrapper ref={dateInputRef}>
       <Input
         id={id}
         type={"text"}
@@ -52,20 +56,25 @@ export const DateInput = ({
         }
         RightComponent={RightComponent}
       />
-      <SDatePickerWrapper
-        variants={datePickerVariants}
-        initial={"hidden"}
-        animate={isOpen ? "visible" : "hidden"}
-        transition={{ duration: 0.4, type: "spring" }}
-      >
-        <DatePicker
-          defaultDate={defaultDate}
-          maxDate={maxDate}
-          onSubmit={handleSubmit}
-          locale={dayjs.locale()}
-          submitComponent={<Button>არჩევა</Button>}
-        />
-      </SDatePickerWrapper>
+      <AnimatePresence>
+        {isOpen && (
+          <SDatePickerWrapper
+            variants={datePickerVariants}
+            initial={"hidden"}
+            animate={"visible"}
+            exit={"hidden"}
+            transition={{ duration: 0.4, type: "spring" }}
+          >
+            <DatePicker
+              defaultDate={defaultDate}
+              maxDate={maxDate}
+              onSubmit={handleSubmit}
+              locale={dayjs.locale()}
+              submitComponent={<Button>არჩევა</Button>}
+            />
+          </SDatePickerWrapper>
+        )}
+      </AnimatePresence>
     </SDateInputWrapper>
   );
 };

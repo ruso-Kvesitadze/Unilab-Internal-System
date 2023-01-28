@@ -20,4 +20,5 @@ export const SProjectImg = styled.img`
   width: 1240px;
   height: 450px;
   margin: 0 auto;
+  pointer-events: none;
 `;

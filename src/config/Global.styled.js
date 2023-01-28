@@ -26,6 +26,6 @@ export const GlobalStyle = createGlobalStyle`
 
   body {
     background-color: #090707; 
-    font-family: "FiraGO-Regular";  
+    font-family: "FiraGO-Regular";
   } 
 `;
