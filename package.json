@@ -9,6 +9,7 @@
     "preview": "vite preview"
   },
   "dependencies": {
+    "@tanstack/match-sorter-utils": "^8.7.6",
     "@tanstack/react-table": "^8.7.8",
     "dayjs": "^1.11.7",
     "framer-motion": "^7.10.2",

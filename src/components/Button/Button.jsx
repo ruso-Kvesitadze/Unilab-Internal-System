@@ -1,5 +1,5 @@
 import React from "react";
-import { SButton } from "./Button.styled";
+import { SButton, SContentWrapper, SText } from "./Button.styled";
 
 export const Button = ({
   type,
@@ -8,8 +8,10 @@ export const Button = ({
   margin,
   fontSize,
   fontWeight,
-  onClick,
+  LeftComponent,
+  RightComponent,
   children,
+  onClick,
 }) => {
   return (
     <SButton
@@ -21,7 +23,11 @@ export const Button = ({
       secondary={secondary}
       onClick={onClick}
     >
-      {children}
+      <SContentWrapper>
+        {LeftComponent}
+        <SText>{children}</SText>
+        {RightComponent}
+      </SContentWrapper>
     </SButton>
   );
 };

@@ -12,6 +12,14 @@ export const SButton = styled.button`
   color: ${({ secondary }) => (secondary ? "#000000" : "#ffffff")};
   cursor: pointer;
   &:hover {
-    background-color: #315c8e;
+    background-color: ${({ secondary }) => (secondary ? "#f2f2f2" : "#315c8e")};
   }
+`;
+
+export const SContentWrapper = styled.div`
+  display: flex;
+`;
+
+export const SText = styled.span`
+  width: 100%;
 `;

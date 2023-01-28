@@ -8,7 +8,6 @@ export const STable = styled.table`
   border-radius: 8px;
   border-collapse: separate;
   border-spacing: 0;
-  width: 1200px;
   max-width: 100%;
   font-size: 0.875rem;
   overflow-x: auto;
@@ -17,7 +16,7 @@ export const STable = styled.table`
 
 export const SHead = styled.thead`
   cursor: pointer;
-  box-shadow: inset -1px -1px 0px 1px #315c8e;
+  box-shadow: inset 0px -3px 0px -1px #315c8e;
 `;
 
 export const SBody = styled.tbody``;
@@ -80,8 +79,6 @@ export const SHeaderContent = styled.div`
 `;
 
 export const SPaddingRow = styled.tr`
-  :nth-child(2) {
-    box-shadow: inset -1px 1px 0px 1px #f1f1f1;
-  }
   color: transparent;
+  box-shadow: inset -1px 1px 0px 1px ${({ isFirst }) => (isFirst ? "#f1f1f1" : "transparent")};
 `;
