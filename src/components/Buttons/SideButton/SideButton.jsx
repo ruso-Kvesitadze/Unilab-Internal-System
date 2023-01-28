@@ -1,30 +1,35 @@
 import React from "react";
-import { SButton } from "./Button.styled";
+import { SSideButton, SSvg } from "./SideButton.styled";
 
-export const Button = ({
+export const SideButton = ({
   type,
   secondary,
   width,
   height,
-  margin,
+  gap,
   fontSize,
   fontWeight,
   hover,
   onClick,
   children,
+  to,
+  LeftComponent,
 }) => {
   return (
-    <SButton
+    <SSideButton
+      to={to}
       width={width}
       height={height}
-      margin={margin}
+      gap={gap}
       fontSize={fontSize}
       fontWeight={fontWeight}
       type={type}
+      hover={hover}
       secondary={secondary}
       onClick={onClick}
     >
+      <SSvg>{LeftComponent}</SSvg>
       {children}
-    </SButton>
+    </SSideButton>
   );
 };

@@ -57,12 +57,7 @@ export const EditCourse = () => {
         </SGridContainer>
       </SContainer>
       <SButtonContainer>
-        <Button
-          width="15rem"
-          height={"3rem"}
-          secondary={"secondary"}
-          hover={"#D1D1D1"}
-        >
+        <Button width="15rem" height={"3rem"} secondary={"secondary"}>
           გაუქმება
         </Button>
         <Button width="15rem" height={"3rem"}>

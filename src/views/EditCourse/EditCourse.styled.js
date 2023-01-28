@@ -9,9 +9,9 @@ export const SCourseTitle = styled.h1`
   display: flex;
   justify-content: center;
   width: 100%;
-  height: 40px;
+  height: 2.5rem;
   font-weight: 400;
-  font-size: 30px;
+  font-size: 1.875rem;
   text-align: center;
   margin: 5.6rem 0 4.3rem;
   color: #ffffff;
