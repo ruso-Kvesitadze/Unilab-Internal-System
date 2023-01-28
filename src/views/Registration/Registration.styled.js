@@ -5,7 +5,6 @@ import { motion } from "framer-motion";
 export const SRegistrationMainDiv = styled(motion.div)`
   display: flex;
   flex-direction: column;
-  align-item: center;
   position: relative;
 `;
 export const STitle = styled.h3`

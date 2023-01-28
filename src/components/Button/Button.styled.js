@@ -3,6 +3,7 @@ import styled from "styled-components";
 export const SButton = styled.button`
   width: ${({ width }) => (width ? width : "100%")};
   margin: ${({ margin }) => (margin ? margin : "")};
+  height: ${({ height }) => (height ? height : "")};
   font-size: ${({ fontSize }) => (fontSize ? fontSize : "0.875rem")};
   font-weight: ${({ fontWeight }) => (fontWeight ? fontWeight : "400")};
   padding: 0.75rem;
