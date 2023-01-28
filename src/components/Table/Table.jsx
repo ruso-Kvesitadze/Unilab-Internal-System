@@ -4,8 +4,8 @@ import {
   getCoreRowModel,
   getPaginationRowModel,
   getSortedRowModel,
+  getFilteredRowModel,
 } from "@tanstack/react-table";
-import React from "react";
 import {
   STable,
   SPagination,
@@ -19,10 +19,11 @@ import {
 } from "./Table.styled";
 import { useState, useMemo } from "react";
 import { SortArrows } from "../SortArrows";
+import { fuzzyFilter } from "../../utils/table";
 
 const itemsPerPage = 7;
 
-export const Table = ({ columns, data }) => {
+export const Table = ({ columns, data, globalFilter, setGlobalFilter }) => {
   const [{ pageIndex, pageSize }, setPagination] = useState({
     pageIndex: 0,
     pageSize: itemsPerPage,
@@ -37,13 +38,20 @@ export const Table = ({ columns, data }) => {
   );
 
   const table = useReactTable({
-    columns,
     data,
+    columns,
+    filterFns: {
+      fuzzy: fuzzyFilter,
+    },
     state: {
       pagination,
+      globalFilter,
     },
+    onGlobalFilterChange: setGlobalFilter,
+    globalFilterFn: fuzzyFilter,
     onPaginationChange: setPagination,
     getCoreRowModel: getCoreRowModel(),
+    getFilteredRowModel: getFilteredRowModel(),
     getSortedRowModel: getSortedRowModel(),
     getPaginationRowModel: getPaginationRowModel(),
   });
@@ -55,7 +63,7 @@ export const Table = ({ columns, data }) => {
           {table.getHeaderGroups().map((headerGroup) => (
             <SRow key={headerGroup.id}>
               {headerGroup.headers.map((header) => (
-                <SBodyCell key={header.id} colSpan={header.colSpan}>
+                <SHeadCell key={header.id} colSpan={header.colSpan}>
                   {header.isPlaceholder ? null : (
                     <SHeaderContent
                       {...{
@@ -75,7 +83,7 @@ export const Table = ({ columns, data }) => {
                       )}
                     </SHeaderContent>
                   )}
-                </SBodyCell>
+                </SHeadCell>
               ))}
             </SRow>
           ))}
@@ -90,11 +98,19 @@ export const Table = ({ columns, data }) => {
               ))}
             </SRow>
           ))}
-          {Math.floor(data.length / itemsPerPage) === pageIndex &&
+          {Math.floor(
+            table.getFilteredRowModel().rows.length / itemsPerPage
+          ) === pageIndex &&
             Array.from(
-              { length: itemsPerPage - Math.floor(data.length % itemsPerPage) },
+              {
+                length:
+                  itemsPerPage -
+                  Math.floor(
+                    table.getFilteredRowModel().rows.length % itemsPerPage
+                  ),
+              },
               (_, i) => (
-                <SPaddingRow key={"table-padding-" + i}>
+                <SPaddingRow key={"table-padding-" + i} isFirst={i === 0}>
                   <SBodyCell>_</SBodyCell>
                 </SPaddingRow>
               )
@@ -104,10 +120,11 @@ export const Table = ({ columns, data }) => {
       <SPagination
         breakLabel="..."
         pageRangeDisplayed={5}
-        pageCount={Math.ceil(data.length / itemsPerPage)}
+        pageCount={table.getPageCount()}
         nextLabel={<img src="assets/svg/chevronRight.svg" />}
         previousLabel={<img src="assets/svg/chevronLeft.svg" />}
         onPageChange={({ selected }) => table.setPageIndex(selected)}
+        forcePage={pageIndex}
         activeClassName="active"
         renderOnZeroPageCount={null}
       />

@@ -6,6 +6,7 @@ export const columns = [
   columnHelper.accessor("full_name", {
     header: "სტუდენტის სახელი და გვარი",
     enableSorting: false,
+    filterFn: "fuzzy",
     cell: (data) => data.getValue(),
   }),
   columnHelper.accessor("status", {
